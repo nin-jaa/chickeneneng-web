@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>CHICKENENENG</title>
+</head>
+<body>
+    <header>
+        <div class="home">
+            <h1>Chickeneneng Party Trays's</h1>
+            <img src="images/logo2.ico" class="logo" alt="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#promos">Promo</a></li>
+                <li><a href="#menu">Product</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Ordering</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="askog">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="images/lumpia.png" >
+            </div>
+        
+            <div class="mySlides fade">
+                <img src="images/scewer.png" >
+            </div>
+        
+            <div class="mySlides fade">
+                <img src="images/pancit.png" >
+            </div>
+            <div class="mySlides fade">
+                <img src="images/valenciana.png" >
+            </div>
+            <div class="mySlides fade">
+                <img src="images/sisig.png" >
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        
+        <div style="text-align:center" class="bilog">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+            <span class="dot" onclick="currentSlide(5)"></span> 
+        </div>
+    </section>
+    <script>
+        let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        const dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = slides.length; }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";  
+        dots[slideIndex - 1].className += " active";
+    }
+    
+    // Optional: Auto slide
+    setInterval(() => {
+        plusSlides(1);
+    }, 3000); // Change image every 3 seconds
+    </script>
+    <br> <br> <br> <br> <br> <br>
+     <!-- Promo Section -->
+    <section class="promos" id="promos">
+        <div class="promo-container">
+            <h2>Promos/Bundles</h2>
+            <div class="promo-grid">
+                <a href="#" class="promo-item">
+                    <img src="images/1menu.pmg.jpg" alt="Promo 1">
+                    <p>menu</p>
+                </a>
+                <a href="#" class="promo-item">
+                    <img src="images/2menu.png" alt="Promo 2">
+                    <p>menu</p>
+                </a>
+                <a href="#" class="promo-item">
+                    <img src="images/3menu.png" alt="Promo 3">
+                    <p>menu</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+     <!-- Menu Section -->
+     <section class="menu" id="menu">
+        <div class="menu-container">
+            <h2>Product</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="images/sisig.png" alt="Dish 1">
+                    <p>sisig</p>
+                    <button class="order-btn">Order</button>
+                </div>
+                <div class="menu-item">
+                    <img src="images/lumpia.png" alt="Dish 2">
+                    <p>lumpia</p>
+                    <button class="order-btn">Order</button>
+                </div>
+                <div class="menu-item">
+                    <img src="images/scewer.png" alt="Dish 3">
+                    <p>cordon</p>
+                    <button class="order-btn">Order</button>
+                </div>
+                </div>
+            </div>
+    </section>
+    <!--FOOTER-->
+    <section id="footer">
+        <footer>
+            <div class="nana">
+            <div class="wor">
+        <div class="loc" id="company">
+            <h2>Chickeneneng Party Tray's</h2>
+            <p>The perfect bite of joy in every flavor!</p>
+        <div class="social">
+            <a href="#" class="active"><i class="bx bxs-dashboard"></i></a>
+            <a href="https://www.facebook.com/"><i class='bx bxl-facebook-square'></i></a>
+            <a class="09287678595"><i class='bx bxs-phone-call' ></i></a>
+            <a href ="https://www.instagram.com/accounts/login/"><i class='bx bxl-instagram-alt'></i></a>
+        </div>
+        </div>
+        <div class="loc" id="useful-links">
+            <h3>Link's</h3>
+        <div class="link">
+            <a href="#">Home</a>
+            <a href="#promos">Promo</a>
+            <a href="#menu">Product</a>
+            <a href="#">About</a>
+            <a href="#">Ordiring</a>
+        </div>
+        </div>
+        <div class="loc" id="contact">
+            <h3>Contact</h3>
+        <div class="contact-kuno">
+            <i class='bx bx-building-house'></i><p>Roxas Avenue (Infront of Filamer) Roxas City,Capiz</p>   
+        </div>
+        <div class="contact-kuno">
+            <i class='bx bx-phone'></i><p>09287678595</p>   
+        </div>
+        </div>
+        </div>
+            
+        </div>
+        </footer>
+        </section>
+</body>
+</html>
