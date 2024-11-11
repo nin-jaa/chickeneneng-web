@@ -1,70 +1,45 @@
-body { 
+/* Basic reset */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background-color: rgb(177, 27, 27);
-  margin: 0; /* Remove default margin */
-  font-family: Georgia, serif; /* Set a default font */
-  height: 50px;
 }
+/* Header (Logo and Navigation) */
 header {
+  text-align: center;
+  padding: 0.5em 0; /* Reduce vertical padding */
   background-color: black;
-  color: #ffffff;
-  padding: 5px 10px; /* Reduced padding for a smaller header */
-  min-height: 70%; /* Reduced minimum height for header */
-  position: relative;
+  min-height: 50%; /* Reduce the minimum height */
   top: 0;
-  backdrop-filter: blur(15px);
-  display: flex;
-  align-items: center; /* Center vertically */
 }
 
 header h1 {
-  position: absolute; /* Positioning h1 absolutely */
-  top: 10px; /* Adjusted position */
-  left: 50%; /* Centering the heading */
-  transform: translateX(-50%); /* Center the heading */
-  margin: 0; /* Remove default margin */
-  text-align: center; /* Center text */
+  font-size: 25px; /* Reduce the font size of the title */
+  color: white;
+  margin-bottom: 5px;
   font-style: oblique;
-  font-size: 1.5rem; /* Adjust font size as needed */
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.logo {
-  max-width: 80px; /* Reduced logo size */
-  height: auto; /* Keep aspect ratio */
-}
-
 nav {
-  flex: 1; /* Allow nav to take up remaining space */
-  display: flex; /* Make nav a flex container */
-  margin-top: 3%;
-
-  margin-right: 5%;
-  justify-content: center; /* Center the nav items horizontally */
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul {
-  list-style-type: none; /* Remove default list styling */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
-  display: flex; /* Display items in a row */
-  gap: 15px; /* Space between list items */
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5em; /* Reduced gap between menu items */
+  margin-right: 45px;
 }
 
-nav li {
-  transition: transform 0.3s; /* Smooth hover effect */
-}
-
-nav li:hover {
-  transform: scale(1.1); /* Scale up on hover */
-}
-
-header a {
+nav ul li a {
   color: rgb(241, 174, 48);
   text-decoration: none;
-  text-transform: uppercase;
-  font-size: 0.9rem; /* Adjusted font size for links */
-  display: inline-block;
-  padding: 8px; /* Reduced padding for links */
+  font-size: 1.1em; /* Reduced font size for links */
 }
 
 header a:hover {
@@ -77,33 +52,19 @@ header .highlight, header .current a {
   font-weight: bold;
 }
 
-/* Home Page Slideshow */
-.askog {
-  padding: 1em; /* Add padding for spacing */
-  max-width: 800px; /* Set a maximum width */
-  max-height: 600px;
-  margin: auto; /* Center the section */
-}
-
+/*slide show*/
 .slideshow-container {
   position: relative;
-  max-width: 100%; /* Full width of parent */
+  max-width: 100%; /* Adjust as needed */
   margin: auto;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-
 .mySlides {
-  display: none;
+  display: block;
 }
-
-img {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 12px; /* Round image corners */
+.slide-img {
+  width: 60%; /* Adjust image size */
 }
-
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -113,96 +74,100 @@ img {
   color: white;
   font-weight: bold;
   font-size: 18px;
-  transition: background-color 0.6s ease;
-  border-radius: 3px;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 10;
+  transition: 0.6s ease;
+  user-select: none;
 }
-
 .prev {
-  left: 10px;
+  left: 0;
 }
 
 .next {
-  right: 10px;
+  right: 0;
 }
-
-.bilog {
-  text-align: center;
-  margin-top: 1em; /* Add space above the dots */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
-
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .askog {
-    padding: 0.5em; /* Reduce padding on smaller screens */
-  }
-
-  .slideshow-container {
-    max-width: 90%; /* Increase max-width for smaller screens */
-  }
-}
-
 /* Menu Section */
-.menu, .promos {
+.menu {
   padding: 2em;
   text-align: center;
-  background-color: rgb(177, 27, 27);;
+  padding: 2em;
+  background-color: rgb(177, 27, 27);
 }
 
-.menu-container, .promo-container {
-  background-color: antiquewhite;
-  padding: 15px;
+.menu-container {
+  background-color: rgb(247, 194, 194);
+  padding: 2em;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.menu h2, .promos h2 {
-  font-size: 2.5rem; /* Use rem for responsiveness */
+.menu h2 {
+  font-size: 2.5em;
   margin-bottom: 1.5em;
-  text-align: left;
 }
 
-.menu-grid, .promo-grid {
+.menu-grid {
   display: flex;
   justify-content: center;
   gap: 2em;
-  flex-wrap: wrap; /* Allow wrapping */
 }
 
-.menu-item, .promo-item {
-  width: 100%; /* Make full width on small screens */
-  max-width: 200px; /* Limit width on larger screens */
-  margin: 30px;
+.menu-item {
+  width: 200px;
 }
 
-.menu-item img, .promo-item img {
-  width: 100%;
+.menu-item img {
+
+  /* Should be changed to something more generic or something if needed -_- */
+
+  width: 100%; /* Ensure the image takes full width of the card */
+  height: 200px;  /* Adjust height to make the image bigger */
+  object-fit: cover; /* Keeps the aspect ratio and fits the image nicely */
   border-radius: 8px;
+
+  
 }
-.menu-item p, .promo-item p {
+
+.menu-item p {
   margin-top: 10px;
-  font-size: 1.2rem; /* Use rem for responsiveness */
+  font-size: 1.2em;
   font-weight: bold;
 }
+.menu h2 {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  text-align: center;  /* Align the title to the left */
+  position: relative;  /* Positioning for the L-shaped line */
+  color: #32a917;
+}
 
+.menu h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Position the line right below the title */
+  width: 130px;   /* Length of the horizontal part of the L-shape */
+  height: 5px;   /* Thickness of the line */
+  background-color: black;  /* Color of the line */
+}
+.menu h2 {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  position: relative;
+}
+/* Underline with glowing effect */
+.menu h2::after {
+  content: '';
+  display: block;
+  width: 100%; /* Full width under the title */
+  height: 4px;
+  background-color: #333;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(51, 51, 51, 0.8), 0 0 20px rgba(51, 51, 51, 0.6); /* Glowing effect */
+}
 /* Order Button */
 .order-btn {
   margin-top: 10px;
@@ -211,12 +176,131 @@ img {
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 1rem; /* Use rem for responsiveness */
+  font-size: 1em;
 }
 
 .order-btn:hover {
   background-color: #555;
 }
+/* Promo Section */
+.promos {
+  padding: 2em;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.promo-container {
+  background-color: white;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.promos h2 {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  text-align: center;  /* Align the title to the left */
+  position: relative;  /* Positioning for the L-shaped line */
+  color: #32a917;
+}
+
+.promos h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Position the line right below the title */
+  width: 130px;   /* Length of the horizontal part of the L-shape */
+  height: 5px;   /* Thickness of the line */
+  background-color: black;  /* Color of the line */
+}
+
+
+
+
+.promo-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+/* Promo Section */
+/* Promo Section */
+.promos {
+  padding: 2em;
+  text-align: left; /* Aligns the title to the left */
+  background-color: rgb(177, 27, 27);
+}
+
+.promo-container {
+  background-color: rgb(247, 194, 194);
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.promos h2 {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  position: relative;
+  
+}
+
+/* Underline with glowing effect */
+.promos h2::after {
+  content: "";
+  display: block;
+  width: 100%; /* Full width under the title */
+  height: 4px;
+  background-color: #333;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(51, 51, 51, 0.8), 0 0 20px rgba(51, 51, 51, 0.6); /* Glowing effect */
+}
+
+/* Promo grid */
+.promo-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+/* Promo cards with larger size */
+.promo-item {
+  width: 300px; /* Increase the width of each promo card */
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  background-color: white;
+  border: 1px solid #ddd;  /* Light border around each card */
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Box shadow for each card */
+  transition: transform 0.3s ease;
+}
+
+.promo-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.promo-item p {
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Hover effect for clickable cards */
+.promo-item:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);  /* Stronger shadow on hover */
+}
+
 /* Footer **/
 footer {
   background-color: black;
@@ -232,6 +316,10 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+p { 
+  color: rgb(241, 174, 48);
+  text-align: center;
 }
 .wor {
   display: flex;
@@ -334,40 +422,89 @@ footer {
       margin-bottom: 25px;
   }
 }
-/* Media Queries */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Align items to the start */
-  }
-  header h1 {
-    position: relative; /* Reset position for better stacking */
-    transform: none; /* Remove transform */
-    margin-bottom: 10px; /* Space below the title */
-  }
-  nav {
-    margin-top: 5px; /* Adjust spacing */
-  }
-  nav ul {
-    flex-direction: row; /* Stack nav items vertically */
-    align-items: center; /* Center items */
-  }
-  
-  header a {
-    font-size: 0.8rem; /* Adjust font size for smaller screens */
-  }
-  
-  .menu-grid, .promo-grid {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items */
-  }
-  
-  .menu-item, .promo-item {
-    width: 90%; /* Take up most of the width */
-    max-width: none; /* Remove max width restriction */
+/* General Section Styling */
+.about {
+  padding: 1em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.6;
+  background-color: rgb(177, 27, 27); /* Light background color */
+  border-radius: 5px; /* Optional: rounded corners for the whole section */
+}
+
+/* Styling for Each Div Inside the About Section */
+.askog, .ngek {
+  padding: 1.5em;
+  margin-bottom: 2em;
+  border-radius: 8px; /* Optional: rounded corners for each div */
+}
+
+/* Border for the askog div */
+.askog {
+  border: 3px solid #e67e22; /* Orange border */
+  background-color: rgb(247, 194, 194); /* Light orange background */
+  justify-content: left;
+}
+
+.askog h2 {
+  color: #e67e22; /* Matching color for the heading */
+}
+
+/* Border for the ngek div */
+.ngek {
+  border: 3px dashed #2ecc71; /* Green dashed border */
+  background-color: rgb(247, 194, 194); /* Light green background */
+  justify-content: right;
+}
+
+.ngek h2 {
+  color: #2ecc71; /* Matching color for the heading */
+}
+/* Add some styling for the headings */
+.about h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 1em;
+}
+
+.about p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 1.5em;
+}
+
+.about ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.about ul li {
+  font-size: 1.1em;
+  margin-bottom: 0.8em;
+  color: #444;
+}
+
+.about ul li strong {
+  color: #e67e22; /* Accent color */
+}
+
+/* Responsive Adjustments for Borders */
+@media (min-width: 768px) {
+  .about {
+    padding: 3em 5%;
   }
 
-  .prev, .next {
-    font-size: 16px; /* Reduce button font size */
+  .askog, .ngek, .halit {
+    padding: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 1.5em 2%;
+  }
+
+  .askog, .ngek, .halit {
+    padding: 1em;
+    margin-bottom: 1.5em;
   }
 }

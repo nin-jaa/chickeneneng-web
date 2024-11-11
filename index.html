@@ -1,175 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>CHICKENENENG PARTY TRAY'S</title>
     <link rel="stylesheet" href="style.css">
-    <title>CHICKENENENG</title>
 </head>
 <body>
+
+    <!-- Header with logo and navigation -->
     <header>
-        <div class="home">
-            <h1>Chickeneneng Party Trays's</h1>
-            <img src="images/logo2.ico" class="logo" alt="logo">
+        <div class="logo">
+            <h1>CHICKENENENG PARTY TRAY'S</h1>
         </div>
+       <!--<div class="askog">
+            <img src="image/logo2.ico" class="logo" alt="logo">
+        </div>-->
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
+                <li><a href="#menu">Cuisine</a></li>
                 <li><a href="#promos">Promo</a></li>
-                <li><a href="#menu">Product</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Ordering</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
         </nav>
     </header>
-    <section class="askog">
+        <!--slideshow-->
+    <center>
+        <section>
         <div class="slideshow-container">
+            <!-- Slide 1 -->
             <div class="mySlides fade">
-                <img src="images/lumpia.png" >
+                <img src="images/askog.png" alt="Sisig" class="slide-img">
             </div>
-        
+            
+            <!-- Slide 2 -->
             <div class="mySlides fade">
-                <img src="images/scewer.png" >
+                <img src="images/sisig.png" alt="Skewer" class="slide-img">
             </div>
-        
+            
+            <!-- Slide 3 -->
             <div class="mySlides fade">
-                <img src="images/pancit.png" >
+                <img src="images/lumpia.png" alt="Lumpia" class="slide-img">
             </div>
-            <div class="mySlides fade">
-                <img src="images/valenciana.png" >
-            </div>
-            <div class="mySlides fade">
-                <img src="images/sisig.png" >
-            </div>
+    
+            <!-- Next and Previous Buttons -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-        
-        <div style="text-align:center" class="bilog">
-            <span class="dot" onclick="currentSlide(1)"></span> 
-            <span class="dot" onclick="currentSlide(2)"></span> 
-            <span class="dot" onclick="currentSlide(3)"></span> 
-            <span class="dot" onclick="currentSlide(4)"></span> 
-            <span class="dot" onclick="currentSlide(5)"></span> 
-        </div>
     </section>
-    <script>
-        let slideIndex = 1;
-    showSlides(slideIndex);
-    
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-    
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-    
-    function showSlides(n) {
-        let i;
-        const slides = document.getElementsByClassName("mySlides");
-        const dots = document.getElementsByClassName("dot");
-        if (n > slides.length) { slideIndex = 1; }
-        if (n < 1) { slideIndex = slides.length; }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";  
-        dots[slideIndex - 1].className += " active";
-    }
-    
-    // Optional: Auto slide
-    setInterval(() => {
-        plusSlides(1);
-    }, 3000); // Change image every 3 seconds
-    </script>
-    <br> <br> <br> <br> <br> <br>
-     <!-- Promo Section -->
-    <section class="promos" id="promos">
-        <div class="promo-container">
-            <h2>Promos/Bundles</h2>
-            <div class="promo-grid">
-                <a href="#" class="promo-item">
-                    <img src="images/1menu.pmg.jpg" alt="Promo 1">
-                    <p>menu</p>
-                </a>
-                <a href="#" class="promo-item">
-                    <img src="images/2menu.png" alt="Promo 2">
-                    <p>menu</p>
-                </a>
-                <a href="#" class="promo-item">
-                    <img src="images/3menu.png" alt="Promo 3">
-                    <p>menu</p>
-                </a>
+    </center> 
+<!-- Menu Section -->
+<section class="menu" id="menu">
+    <div class="menu-container">
+        <h2>Cuisine</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="images/buffalo.png" alt="Dish 1">
+                <p>Bufalo</p>
             </div>
+            <div class="menu-item">
+                <img src="images/pancit.png" alt="Dish 2">
+                <p>Pancit</p>
+            </div>
+            <div class="menu-item">
+                <img src="images/askog.png" alt="Dish 3">
+                <p>Inasal</p>
+            </div>
+        <div class="menu-item">
+            <img src="images/fried.png" alt="Dish 4">
+            <p>Fried chicken</p>
         </div>
-    </section>
+    </div>
+    </div>
+</section>
 
-     <!-- Menu Section -->
-     <section class="menu" id="menu">
-        <div class="menu-container">
-            <h2>Product</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="images/sisig.png" alt="Dish 1">
-                    <p>sisig</p>
-                    <button class="order-btn">Order</button>
-                </div>
-                <div class="menu-item">
-                    <img src="images/lumpia.png" alt="Dish 2">
-                    <p>lumpia</p>
-                    <button class="order-btn">Order</button>
-                </div>
-                <div class="menu-item">
-                    <img src="images/scewer.png" alt="Dish 3">
-                    <p>cordon</p>
-                    <button class="order-btn">Order</button>
-                </div>
-                </div>
-            </div>
+
+<section class="promos" id="promos">
+    <div class="promo-container">
+        <h2>Promos</h2>
+        <div class="promo-grid">
+            <a href="#" class="promo-item">
+                <img src="images/chicken pops.png" alt="Promo 1">
+                <p>Chicken poppers</p>
+            </a>
+            <a href="#" class="promo-item">
+                <img src="images/lumpia.png" alt="Promo 2">
+                <p>Lumpia</p>
+            </a>
+            <a href="#" class="promo-item">
+                <img src="images/askog.png" alt="Promo 3">
+                <p>Inasal</p>
+            </a>
+            <a href="#" class="promo-item">
+                <img src="images/fried.png" alt="Promo 4">
+                <p>Fried Chicken</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+<div class="askog">
+    <h2>Chickeneneng Party Tray's</h2>
+<p>
+    Welcome to Chickeneneng Party Tray's!
+    At Chickeneneng Party Tray's, we specialize in bringing delicious and mouth-watering party trays filled with the finest, flavorful chicken dishes. Whether you're planning a small gathering, a family celebration, or a large corporate event, our goal is to make your occasion unforgettable with our signature chicken trays and exceptional service.
+<br><br>     
+   Our passion for food comes from the heart, and our dedication to quality is unmatched. We believe in using only the freshest ingredients, paired with family recipes that have been passed down through generations. From crispy fried chicken to flavorful grilled wings, we offer a variety of chicken-based dishes that are sure to satisfy everyone at your event.
+<br><br>     
+   Our Story
+   Chickeneneng Party Tray's started with a simple idea: to provide people with the best party trays that make every event shine. Founded by a passionate food lover with a love for family gatherings and good company, we wanted to offer a catering service that was both delicious and stress-free.
+<br><br>      
+   What began as a small family-run kitchen has now grown into a trusted name in the catering world. We’ve catered to birthdays, weddings, office parties, and everything in between each time delivering a product that is both tasty and beautifully presented.
+</p>
+</div>
+<div class="ngek">
+    <h2>Why Choose Us?</h2>
+    <p>
+        <ul>
+      <li>➢ Fresh Ingredients: We use only the finest, locally sourced ingredients to create every dish. You can taste the difference in every bite!</li>
+      <li>➢ Variety of Options: From traditional fried chicken to BBQ wings, grilled chicken, and even veggie sides, we have a wide range of options to suit any taste or dietary need.</li>
+      <li>➢ Customizable Trays: Each event is unique, and we offer customizable trays to fit your menu needs. Tell us what you're looking for, and we’ll create the perfect tray for your event.</li>
+      <li>➢ On-Time Delivery: We understand the importance of timing in catering, and we take pride in delivering your order fresh and on time.</li>
+      <li>➢ Affordable Pricing: Quality doesn’t have to come with a hefty price tag. Our trays are designed to fit your budget without compromising on taste.</li>
+        </ul>
+    </p> 
+    <p>
+    Our trays can serve anywhere from 5 to 50 guests, and we’re happy to help you customize your order based on your event size and preferences.
+    <br> 
+    Our Commitment to You
+    At Chickeneneng Party Tray's, our mission is to bring people together through the joy of great food. We believe that good food creates good times, and we’re honored to be a part of your celebrations.
+    <br> 
+    Thank you for choosing us to cater your next event! We promise to make it one to remember.
+    </p>
+</div>
+</section>
+
+<!--FOOTER-->
+<section id="footer">
+    <footer>
+        <div class="nana">
+        <div class="wor">
+    <div class="loc" id="company">
+        <h2>Chickeneneng Party Tray's</h2>
+        <p>The perfect bite of joy in every flavor !</p>
+    <div class="social">
+        <a href="#" class="active"><i class="bx bxs-dashboard"></i></a>
+        <a href="https://www.facebook.com/"><i class='bx bxl-facebook-square'></i></a>
+        <a class="09287678595"><i class='bx bxs-phone-call' ></i></a>
+        <a href ="https://www.instagram.com/accounts/login/"><i class='bx bxl-instagram-alt'></i></a>
+    </div>
+    </div>
+    <div class="loc" id="useful-links">
+        <h3>Link's</h3>
+    <div class="link">
+        <a href="#">Home</a>
+        <a href="#menu">Cuisine</a>
+        <a href="#promos">Promo</a>
+        <a href="#about">About</a>
+    </div>
+    </div>
+    <div class="loc" id="contact">
+        <h3>Contact</h3>
+    <div class="contact-kuno">
+        <i class='bx bx-building-house'></i><p>Roxas Avenue (Infront of Filamer) Roxas City,Capiz</p>   
+    </div>
+    <div class="contact-kuno">
+        <i class='bx bx-phone'></i><p>09287678595</p>   
+    </div>
+    </div>
+    </div>
+        
+    </div>
+    <div>
+       <p>© 2019 Chickeneneng party tray's All rights reserved</p>
+    </div>
+    </footer>
     </section>
-    <!--FOOTER-->
-    <section id="footer">
-        <footer>
-            <div class="nana">
-            <div class="wor">
-        <div class="loc" id="company">
-            <h2>Chickeneneng Party Tray's</h2>
-            <p>The perfect bite of joy in every flavor!</p>
-        <div class="social">
-            <a href="#" class="active"><i class="bx bxs-dashboard"></i></a>
-            <a href="https://www.facebook.com/"><i class='bx bxl-facebook-square'></i></a>
-            <a class="09287678595"><i class='bx bxs-phone-call' ></i></a>
-            <a href ="https://www.instagram.com/accounts/login/"><i class='bx bxl-instagram-alt'></i></a>
-        </div>
-        </div>
-        <div class="loc" id="useful-links">
-            <h3>Link's</h3>
-        <div class="link">
-            <a href="#">Home</a>
-            <a href="#promos">Promo</a>
-            <a href="#menu">Product</a>
-            <a href="#">About</a>
-            <a href="#">Ordiring</a>
-        </div>
-        </div>
-        <div class="loc" id="contact">
-            <h3>Contact</h3>
-        <div class="contact-kuno">
-            <i class='bx bx-building-house'></i><p>Roxas Avenue (Infront of Filamer) Roxas City,Capiz</p>   
-        </div>
-        <div class="contact-kuno">
-            <i class='bx bx-phone'></i><p>09287678595</p>   
-        </div>
-        </div>
-        </div>
-            
-        </div>
-        </footer>
-        </section>
+<script src="script.js"></script>
 </body>
 </html>
