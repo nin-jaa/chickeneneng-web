@@ -306,7 +306,6 @@ footer {
   background-color: black;
   position: relative;
   width: 100%;
-  min-height: 50px;
   padding: 10px; /* Corrected padding syntax */
 }
 .nana {
@@ -314,8 +313,8 @@ footer {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 p { 
   color: rgb(241, 174, 48);
@@ -323,8 +322,8 @@ p {
 }
 .wor {
   display: flex;
-  justify-content: center; /* Center items in the footer */
-  align-items: center;
+  justify-content: space-between; /* Center items in the footer */
+  align-items: flex-start;
   width: 100%; /* Ensure it fills the footer */
   flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
@@ -357,6 +356,8 @@ p {
 }
 .social a {
   color: rgb(241, 174, 48);
+  margin: 0 10px;
+  transition: transform 0.3s ease;
 }
 .loc .social a i {
   color: rgb(241, 174, 48);
@@ -366,7 +367,7 @@ p {
   transition: 0.3s ease;
 }
 .loc .social a i:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   filter: grayscale(25%);
 }
 .loc .link a {
@@ -395,22 +396,31 @@ p {
   transform: translateX(-8px);
   color: rgb(212, 212, 16);
 }
-.loc .contact-kuno {
-  display: inline;
-  justify-content: center; /* Center the contact info */
+  .loc .contact-kuno {    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center align the icon and text */
+    margin-bottom: 10px; /* Space between contact items */
 }
+
 .loc .contact-kuno i {
-  margin-right: 15px;
+  margin-right: 10px; /* Space between icon and text */
+  color: rgb(241, 174, 48); /* Icon color */
+  font-size: 24px; /* Adjust icon size */
 }
-@media(max-width: 900px) {
+@media(max-width: 768px) {
   .wor {
       flex-direction: column;
+      align-items: center;
   }
   .loc {
       width: 100%;
       text-align: center; /* Center text on smaller screens */
       margin-bottom: 25px;
   }
+  .social a {
+    margin: 0 5px; /* Reduce margin between icons */
+    font-size: 20px; /* Adjust icon size for smaller screens */
+}
+
 }
 @media(max-width: 768px) {
   .wor {
@@ -422,8 +432,24 @@ p {
       margin-bottom: 25px;
   }
 }
+@media (max-width: 480px) {
+  .loc {
+      padding: 0 1rem; /* Reduce padding on smaller screens */
+  }
+
+  .social a {
+      font-size: 18px; /* Further reduce icon size */
+  }
+
+  .nana {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center align items */
+  }
+}
 /* General Section Styling */
 .about {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between the two sections */
   padding: 1em;
   font-family: Georgia, 'Times New Roman', Times, serif;
   line-height: 1.6;
@@ -431,13 +457,13 @@ p {
   border-radius: 5px; /* Optional: rounded corners for the whole section */
 }
 
-/* Styling for Each Div Inside the About Section */
 .askog, .ngek {
-  padding: 1.5em;
-  margin-bottom: 2em;
-  border-radius: 8px; /* Optional: rounded corners for each div */
+  flex: 1; /* Allow both sections to grow equally */
+  padding: 1.5em; /* Add some padding */
+  margin: 0 1em; /* Add horizontal margin for spacing */
 }
 
+/* You can adjust the widths of .askog and .ngek if needed */
 /* Border for the askog div */
 .askog {
   border: 3px solid #e67e22; /* Orange border */
