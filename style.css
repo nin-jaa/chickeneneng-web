@@ -72,6 +72,43 @@ header .highlight, header .current a {
   color: black;
   font-weight: bold;
 }
+@media (max-width: 768px) {
+  header {
+    text-align: center; /* Center the header text on smaller screens */
+  }
+
+  nav {
+    flex-direction: column; /* Stack navigation items vertically */
+  }
+
+  .Image {
+    height: 70vh; /* Adjust height for smaller screens */
+  }
+
+  .menu-grid, .promo-grid {
+    flex-direction: column; /* Stack items vertically */
+    gap: 1em; /* Adjust spacing */
+  }
+
+  .menu-item, .promo-item {
+    width: 90%; /* Make items take more width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    flex-direction: column; /* Stack about section items */
+  }
+
+  .askog, .askog1, .ngek {
+    flex-direction: column; /* Stack contact sections */
+    padding: 1em; /* Adjust padding */
+  }
+
+  .map {
+    width: 100%; /* Make map full width */
+  }
+}
 /*FOR MY HOME*/
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4&family=Mona+Sans&display=swap');
 
