@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4&family=Mona+Sans&display=swap');
+
+:root {
+	--clr-primary: teal;
+	--clr-secondary: crimson;
+	--bg-primary: #0d1a2d;
+	--bg-secondary: #14273e;
+	--text-primary: #fff;
+	--text-secondary: #ccc;
+  }
+  *,
+  *::before,
+  *::after {
+	box-sizing: border-box;
+  }
+  
+  html {
+	color-scheme: dark;
+  }
 /* Basic reset */
 body {
   margin: 0;
@@ -7,39 +26,41 @@ body {
 }
 /* Header (Logo and Navigation) */
 header {
-  text-align: center;
-  padding: 0.5em 0; /* Reduce vertical padding */
+  text-align: start;
+  justify-content: start;
+  padding: 0.3em 0; /* Reduce vertical padding */
+  position: relative;
   background-color: black;
-  min-height: 50%; /* Reduce the minimum height */
-  top: 0;
+  min-height: 40px; /* Adjust the minimum height to be smaller */
 }
-
 header h1 {
-  font-size: 25px; /* Reduce the font size of the title */
+  text-align: center;
+  justify-content: center;
+  font-size: 20px; /* Reduce the font size of the title */
   color: white;
   margin-bottom: 5px;
   font-style: oblique;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  flex: 1; 
 }
-
 nav {
-  flex: 1;
   display: flex;
   justify-content: center;
+  margin-right: 38px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 1.5em; /* Reduced gap between menu items */
-  margin-right: 45px;
+  gap: 2em; /* Reduced gap between menu items */
+  margin: 0;
 }
 
 nav ul li a {
   color: rgb(241, 174, 48);
   text-decoration: none;
-  font-size: 1.1em; /* Reduced font size for links */
+  font-size: 0.9em; /* Reduced font size for links */
 }
 
 header a:hover {
@@ -51,41 +72,189 @@ header .highlight, header .current a {
   color: black;
   font-weight: bold;
 }
+/*FOR MY HOME*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4&family=Mona+Sans&display=swap');
 
-/*slide show*/
-.slideshow-container {
-  position: relative;
-  max-width: 100%; /* Adjust as needed */
-  margin: auto;
-  overflow: hidden;
+:root {
+	--clr-primary: teal;
+	--clr-secondary: crimson;
+	--bg-primary: #0d1a2d;
+	--bg-secondary: #14273e;
+	--text-primary: #fff;
+	--text-secondary: #ccc;
+  }
+  *,
+  *::before,
+  *::after {
+	box-sizing: border-box;
+  }
+  
+  html {
+	color-scheme: dark;
+  }
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .testimonials {
+    flex-direction: column;
+  }
+}   
+:root{
+  --index: calc(1vw + 1vh);
+  --transition: cubic-bezier(.1, .7, 0, 1);
 }
-.mySlides {
-  display: block;
+.continue {
+	padding: 0.8em 1.8em;
+	border-radius: 8px;
+	background-color: transparent;
+	color:#17c3b2;
+	border:2px solid #17c3b2;
+	font-size: 16px;
+	cursor: pointer;
+	z-index: 1;
+	transition: 0.3s;
+	overflow:hidden ;
+	position: relative;
 }
-.slide-img {
-  width: 60%; /* Adjust image size */
+.continue:before{
+	content:'';
+	width: 0;
+	height: 300%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transition: 0.5s ease;
+	transform: translate(-50%,-50%) rotate(45deg);
+	display: block;
+	z-index: -1;
+	background-color: #17c3b2;
 }
-.prev, .next {
+.continue:hover::before{
+	width: 105%;
+}
+.continue:hover{
+	color:#f3ecec;
+}
+.Image {
+  height: 90vh;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.Image p {
+  height: 90vh; /* This sets the height to 90% of the viewport height */
+  margin-bottom: 0;
+  text-align: center;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  margin-top: 5%;
+  padding: 0;
+}
+        
+.items{
+  display: flex;
+  gap: 0.1rem;
+  perspective: calc(var(--index) * 35);
+            
+}
+        
+.item{
+  width: calc(var(--index) * 3);
+  height: calc(var(--index) * 20);
+  background-color: rgb(177, 27, 27);
+  background-size: cover;
+  background-position: center;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  user-select: none;
+  filter: grayscale(1) brightness(.5);
+  transition: transform 1.25s var(--transition), filter 3s var(--transition), width 1.25s var(--transition);
+  will-change: transform, filter, rotateY, width;
 }
-.prev {
-  left: 0;
+        
+.item::before, .item::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 20px;
+  right: calc(var(--index) * -1);
+}
+        
+.item::after{
+  left: calc(var(--index) * -1);
+}
+        
+.items .item:hover{
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * 10));
+}
+        
+/*Right*/
+        
+.items .item:hover + *{
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * 8.5)) rotateY(35deg);
+  z-index: -1;
+}
+        
+.items .item:hover + * + *{
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * 5.6)) rotateY(40deg);
+  z-index: -2;
+}
+        
+.items .item:hover + * + * + *{
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * 2.5)) rotateY(30deg);
+  z-index: -3;
+}
+        
+.items .item:hover + * + * + * + *{
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * .6)) rotateY(15deg);
+  z-index: -4;
+}
+        
+        
+/*Left*/
+        
+.items .item:has( + :hover){
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * 8.5)) rotateY(-35deg);
+}
+        
+.items .item:has( + * + :hover){
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * 5.6)) rotateY(-40deg);
+}
+        
+.items .item:has( + * + * + :hover){
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * 2.5)) rotateY(-30deg);
+}
+        
+.items .item:has( + * + * + * + :hover){
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * .6)) rotateY(-15deg);
+}
+        
+.items .item:active, .items .item:focus {
+  width: 28vw;
+  filter: inherit;
+  z-index: 100;
+  transform: translateZ(calc(var(--index) * 10));
+  margin: 0 .45vw;
+}
+h1{
+  color: rgb(241, 174, 48);
 }
 
-.next {
-  right: 0;
-}
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.kit h1 {
+  margin: 0;
+  padding: 0;
 }
 /* Menu Section */
 .menu {
@@ -101,18 +270,14 @@ header .highlight, header .current a {
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
   max-width: 1200px;
+  max-height: 1000px;
   margin: 0 auto;
 }
-
-.menu h2 {
-  font-size: 2.5em;
-  margin-bottom: 1.5em;
-}
-
 .menu-grid {
   display: flex;
   justify-content: center;
   gap: 2em;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
 }
 
 .menu-item {
@@ -120,18 +285,36 @@ header .highlight, header .current a {
 }
 
 .menu-item img {
-
-  /* Should be changed to something more generic or something if needed -_- */
-
   width: 100%; /* Ensure the image takes full width of the card */
   height: 200px;  /* Adjust height to make the image bigger */
   object-fit: cover; /* Keeps the aspect ratio and fits the image nicely */
   border-radius: 8px;
-
-  
 }
 
 .menu-item p {
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.menu-grid2 {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
+}
+
+.menu-item2 {
+  width: 200px;
+}
+
+.menu-item2 img {
+  width: 100%; /* Ensure the image takes full width of the card */
+  height: 200px;  /* Adjust height to make the image bigger */
+  object-fit: cover; /* Keeps the aspect ratio and fits the image nicely */
+  border-radius: 8px;
+}
+
+.menu-item2 p {
   margin-top: 10px;
   font-size: 1.2em;
   font-weight: bold;
@@ -141,7 +324,7 @@ header .highlight, header .current a {
   margin-bottom: 1.5em;
   text-align: center;  /* Align the title to the left */
   position: relative;  /* Positioning for the L-shaped line */
-  color: #32a917;
+  color: rgb(241, 174, 48);
 }
 
 .menu h2::after {
@@ -203,9 +386,8 @@ header .highlight, header .current a {
   margin-bottom: 1.5em;
   text-align: center;  /* Align the title to the left */
   position: relative;  /* Positioning for the L-shaped line */
-  color: #32a917;
+  color: rgb(241, 174, 48);
 }
-
 .promos h2::after {
   content: '';
   position: absolute;
@@ -215,17 +397,11 @@ header .highlight, header .current a {
   height: 5px;   /* Thickness of the line */
   background-color: black;  /* Color of the line */
 }
-
-
-
-
 .promo-grid {
   display: flex;
   justify-content: center;
   gap: 2em;
 }
-
-/* Promo Section */
 /* Promo Section */
 .promos {
   padding: 2em;
@@ -263,17 +439,18 @@ header .highlight, header .current a {
 /* Promo grid */
 .promo-grid {
   display: flex;
-  justify-content: center;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
   gap: 2em;
+  justify-content: center;
 }
 
 /* Promo cards with larger size */
 .promo-item {
   width: 300px; /* Increase the width of each promo card */
+  max-width: 300px; /* Optional: Max width for each promo item */
   text-align: center;
   text-decoration: none;
   color: inherit;
-  display: block;
   background-color: white;
   border: 1px solid #ddd;  /* Light border around each card */
   border-radius: 8px;
@@ -300,7 +477,46 @@ header .highlight, header .current a {
   transform: scale(1.05); /* Slightly enlarge the card on hover */
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);  /* Stronger shadow on hover */
 }
+/* Promo grid */
+.promo-grid2 {
+  display: flex;
+  margin-top: 20px;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
+  gap: 2em;
+  justify-content: center;
+}
+.promo-item2 {
+  width: 300px; /* Increase the width of each promo card */
+  max-width: 300px; /* Optional: Max width for each promo item */
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  background-color: white;
+  border: 1px solid #ddd;  /* Light border around each card */
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Box shadow for each card */
+  transition: transform 0.3s ease;
+}
 
+.promo-item2 img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.promo-item2 p {
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Hover effect for clickable cards */
+.promo-item2:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);  /* Stronger shadow on hover */
+}
 /* Footer **/
 footer {
   background-color: black;
@@ -434,7 +650,8 @@ p {
 }
 @media (max-width: 480px) {
   .loc {
-      padding: 0 1rem; /* Reduce padding on smaller screens */
+    text-align: center; 
+    padding: 0 1rem; /* Reduce padding on smaller screens */
   }
 
   .social a {
@@ -457,7 +674,7 @@ p {
   border-radius: 5px; /* Optional: rounded corners for the whole section */
 }
 
-.askog, .ngek {
+.askog1, .ngek {
   flex: 1; /* Allow both sections to grow equally */
   padding: 1.5em; /* Add some padding */
   margin: 0 1em; /* Add horizontal margin for spacing */
@@ -465,25 +682,25 @@ p {
 
 /* You can adjust the widths of .askog and .ngek if needed */
 /* Border for the askog div */
-.askog {
-  border: 3px solid #e67e22; /* Orange border */
+.askog1 {
+  border: 3px solid rgb(241, 174, 48); /* Orange border */
   background-color: rgb(247, 194, 194); /* Light orange background */
   justify-content: left;
 }
 
-.askog h2 {
-  color: #e67e22; /* Matching color for the heading */
+.askog1 h2 {
+  color: rgb(241, 174, 48); /* Matching color for the heading */
 }
 
 /* Border for the ngek div */
 .ngek {
-  border: 3px dashed #2ecc71; /* Green dashed border */
+  border: 3px dashed rgb(241, 174, 48)1; /* Green dashed border */
   background-color: rgb(247, 194, 194); /* Light green background */
   justify-content: right;
 }
 
 .ngek h2 {
-  color: #2ecc71; /* Matching color for the heading */
+  color: rgb(241, 174, 48); /* Matching color for the heading */
 }
 /* Add some styling for the headings */
 .about h2 {
@@ -510,7 +727,7 @@ p {
 }
 
 .about ul li strong {
-  color: #e67e22; /* Accent color */
+  color: #555; /* Accent color */
 }
 
 /* Responsive Adjustments for Borders */
@@ -519,7 +736,7 @@ p {
     padding: 3em 5%;
   }
 
-  .askog, .ngek, .halit {
+  .askog1, .ngek, .halit {
     padding: 2em;
   }
 }
@@ -529,8 +746,76 @@ p {
     padding: 1.5em 2%;
   }
 
-  .askog, .ngek, .halit {
+  .askog1, .ngek, .halit {
     padding: 1em;
     margin-bottom: 1.5em;
   }
+}
+/*contact*/
+.askog {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out the two sections */
+  padding: 2em;
+  background-color: rgb(177, 27, 27); /* Optional: background color for the section */
+}
+
+.contact-container {
+  width: 40%; /* Set the width of the contact form */
+  margin-right: 20px; /* Space between the contact form and the map */
+  padding: 1em;
+  background-color: rgb(227, 118, 118); /* Background color for the contact form */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
+}
+h2 {
+ color: rgb(241, 174, 48);
+}
+.askog3 {
+  margin-top: 1em; /* Add some space between the form and contact info */
+  color: #000;
+}
+.input-group {
+  display: flex; /* Use flexbox for horizontal layout */
+    align-items: center; /* Center items vertically */
+  margin-bottom: 30px;
+  position: relative;
+}
+.input-group input, textarea {
+  width: 100%;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid black;
+  color: black;
+  background: transparent;
+  font-size: 15px;
+}
+
+.input-group label {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  color: #fff;
+  cursor: text;
+  transition: 0.2s;
+}
+button {
+  padding: 10px 0;
+  color: black;
+  outline: none;
+  background: transparent;
+  border: 1px solid black;
+  width: 100%;
+  cursor: pointer;
+}
+.map {
+  width: 55%; /* Set the width of the map */
+  max-width: 600px; /* Optional: Set a max width for the map */
+}
+
+.map iframe {
+  width: 100%; /* Make the map responsive */
+  height: 450px; /* Set a fixed height for the map */
+  border: 0; /* Remove border */
 }
