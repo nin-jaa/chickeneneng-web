@@ -131,31 +131,6 @@ header .highlight, header .current a {
   text-align: center;
 }
 
-.browse {
-  display: inline-block;
-  margin-top: 60px;
-  padding: 10px 20px;
-  border: 1px solid #333;
-  text-decoration: none;
-  border-radius: 20px 20px;
-  color: #000;
-  letter-spacing: 0.1em;
-  font-size: 20px;
-  font-weight: 400;
-  transition: 0.5s;
-  background-color: rgba(255, 255, 255, 0.226);
-}
-
-.browse:hover {
-  border-color: #8a2be2;
-  letter-spacing: 0.25em;
-  transition: 0.5s;
-  box-shadow: 0 0 35px rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
-  transform: translateY(-2px); /* Move the link slightly upwards on hover */
-}
-
-
 .Image p {
   text-align: center;
 }
@@ -176,7 +151,7 @@ header .highlight, header .current a {
         }
         
         .item{
-            width: calc(var(--index) * 2);
+            width: calc(var(--index) * 2.10);
             height: calc(var(--index) * 20);
             background-color: #222;
             background-size: cover;
@@ -191,7 +166,7 @@ header .highlight, header .current a {
             content: '';
             position: absolute;
             height: 100%;
-            width: 20px;
+            width: 50px;
             right: calc(var(--index) * -1);
         }
         
@@ -261,7 +236,9 @@ header .highlight, header .current a {
             margin: 0 .45vw;
         }
 
-
+h1{
+  color: rgb(241, 174, 48);
+}
 .kit h1 {
   margin: 0;
   padding: 0;
