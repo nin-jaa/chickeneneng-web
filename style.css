@@ -36,6 +36,7 @@ body {
 header {
   text-align: start;
   justify-content: start;
+  flex-direction: column;
   padding: 0.3em 0; /* Reduce vertical padding */
   position: relative;
   background-color: black;
@@ -47,6 +48,7 @@ header h1 {
   font-size: 20px; /* Reduce the font size of the title */
   color: white;
   margin-bottom: 5px;
+  margin-right: 440px;
   font-style: oblique;
   font-family: Georgia, 'Times New Roman', Times, serif;
   flex: 1; 
@@ -79,6 +81,54 @@ header a:hover {
 header .highlight, header .current a {
   color: black;
   font-weight: bold;
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      align-items: center; /* Center items */
+      text-align: center; /* Center text for smaller screens */
+  }
+
+  nav {
+      width: 100%; /* Full width for navigation */
+      margin-top: 10px; /* Space between header and nav */
+  }
+
+  nav ul {
+      flex-direction: column; /* Stack menu items vertically */
+      width: 100%; /* Full width for the menu */
+      padding: 0; /* Remove padding */
+  }
+
+  nav ul li {
+      margin: 0; /* Remove margin for items */
+  }
+
+  nav ul li a {
+      padding: 10px; /* Add padding for touch targets */
+      text-align: center; /* Center text for menu items */
+      width: 100%; /* Full width for links */
+      display: block; /* Make links block level */
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+      font-size: 18px; /* Adjust font size for smaller screens */
+  }
+
+  nav ul li a {
+      font-size: 0.8em; /* Smaller font size for links */
+  }
+}
+@media (max-width: 480px) {
+  header h1 {
+      font-size: 10px; /* Adjust font size for smaller screens */
+  }
+  nav ul li a {
+      font-size: 0.8em; /* Smaller font size for links */
+  }
 }
 @media (max-width: 768px) {
   .navbar {
@@ -134,107 +184,107 @@ header .highlight, header .current a {
 .Image p {
   text-align: center;
 }
-        .wrapper{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: auto;
-            margin-top: 5%;
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  margin-top: 5%;
   padding: 0;
-        }
+}
         
-        .items{
-            display: flex;
-            gap: 0.4rem;
-            perspective: calc(var(--index) * 30);
+.items{
+  display: flex;
+  gap: 0.4rem;
+  perspective: calc(var(--index) * 30);
             
-        }
+}
         
-        .item{
-            width: calc(var(--index) * 2.10);
-            height: calc(var(--index) * 20);
-            background-color: #222;
-            background-size: cover;
-            background-position: center;
-            cursor: pointer;
-            filter: grayscale(1) brightness(.5);
-            transition: transform 1.25s var(--transition), filter 3s var(--transition), width 1.25s var(--transition);
-            will-change: transform, filter, rotateY, width;
-        }
+.item{
+  width: calc(var(--index) * 2.10);
+  height: calc(var(--index) * 20);
+  background-color: #222;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  filter: grayscale(1) brightness(.5);
+  transition: transform 1.25s var(--transition), filter 3s var(--transition), width 1.25s var(--transition);
+  will-change: transform, filter, rotateY, width;
+}
         
-        .item::before, .item::after{
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 50px;
-            right: calc(var(--index) * -1);
-        }
+.item::before, .item::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 50px;
+  right: calc(var(--index) * -1);
+}
         
-        .item::after{
-            left: calc(var(--index) * -1);
-        }
+.item::after{
+  left: calc(var(--index) * -1);
+}
         
-        .items .item:hover{
-            filter: inherit;
-            transform: translateZ(calc(var(--index) * 10));
-        }
+.items .item:hover{
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * 10));
+}
         
-        /*Right*/
+/*Right*/
         
-        .items .item:hover + *{
-            filter: inherit;
-            transform: translateZ(calc(var(--index) * 8.5)) rotateY(35deg);
-            z-index: -1;
-        }
+.items .item:hover + *{
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * 8.5)) rotateY(35deg);
+  z-index: -1;
+}
         
-        .items .item:hover + * + *{
-            filter: inherit;
-            transform: translateZ(calc(var(--index) * 5.6)) rotateY(40deg);
-            z-index: -2;
-        }
+.items .item:hover + * + *{
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * 5.6)) rotateY(40deg);
+  z-index: -2;
+}
         
-        .items .item:hover + * + * + *{
-            filter: inherit;
-            transform: translateZ(calc(var(--index) * 2.5)) rotateY(30deg);
-            z-index: -3;
-        }
+.items .item:hover + * + * + *{
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * 2.5)) rotateY(30deg);
+  z-index: -3;
+}
         
-        .items .item:hover + * + * + * + *{
-            filter: inherit;
-            transform: translateZ(calc(var(--index) * .6)) rotateY(15deg);
-            z-index: -4;
-        }
+.items .item:hover + * + * + * + *{
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * .6)) rotateY(15deg);
+  z-index: -4;
+}
         
         
-        /*Left*/
+/*Left*/
         
-        .items .item:has( + :hover){
-            filter: inherit;
-            transform: translateZ(calc(var(--index) * 8.5)) rotateY(-35deg);
-        }
+.items .item:has( + :hover){
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * 8.5)) rotateY(-35deg);
+}
         
-        .items .item:has( + * + :hover){
-            filter: inherit;
-            transform: translateZ(calc(var(--index) * 5.6)) rotateY(-40deg);
-        }
+.items .item:has( + * + :hover){
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * 5.6)) rotateY(-40deg);
+}
         
-        .items .item:has( + * + * + :hover){
-            filter: inherit;
-            transform: translateZ(calc(var(--index) * 2.5)) rotateY(-30deg);
-        }
+.items .item:has( + * + * + :hover){
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * 2.5)) rotateY(-30deg);
+}
         
-        .items .item:has( + * + * + * + :hover){
-            filter: inherit;
-            transform: translateZ(calc(var(--index) * .6)) rotateY(-15deg);
-        }
+.items .item:has( + * + * + * + :hover){
+  filter: inherit;
+  transform: translateZ(calc(var(--index) * .6)) rotateY(-15deg);
+}
         
-        .items .item:active, .items .item:focus {
-          width: 28vw;
-          filter: inherit;
-          z-index: 100;
-          transform: translateZ(calc(var(--index) * 10));
-            margin: 0 .45vw;
-        }
+.items .item:active, .items .item:focus {
+  width: 28vw;
+  filter: inherit;
+  z-index: 100;
+  transform: translateZ(calc(var(--index) * 10));
+  margin: 0 .45vw;
+}
 
 h1{
   color: rgb(241, 174, 48);
@@ -805,4 +855,42 @@ button {
   width: 100%; /* Make the map responsive */
   height: 450px; /* Set a fixed height for the map */
   border: 0; /* Remove border */
+}
+/*for ordering*/
+.order-container {
+  padding: 2em;
+  background-color: rgb(227, 118, 118);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input, .input-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(241, 174, 48);
 }

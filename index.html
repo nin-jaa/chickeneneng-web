@@ -9,7 +9,10 @@
 <body>
     <!-- Header with logo and navigation -->
     <header>
-        <h1>CHICKENENENG PARTY TRAY'S</h1>
+        <h1>
+            <img src="images/logo.png.ico" alt="Logo" style="height: 50px; vertical-align: middle; margin-right: 400px;">
+            CHICKENENENG PARTY TRAY'S
+        </h1>
         <nav>
             <ul>
                 <li><a href="#newextra">Home</a></li>
@@ -65,19 +68,19 @@
     <div class="menu-grid2">
         <a class="menu-item2">
             <img src="images/spag.png.jpg" alt="Dish 4">
-            <p>Fried chicken</p>
+            <p>Spaghetti</p>
         </a>
         <a class="menu-item2">
             <img src="images/cordon.png.jpg" alt="Dish 4">
-            <p>Fried chicken</p>
+            <p>Chicken Cordon bleu</p>
         </a>
         <a class="menu-item2">
             <img src="images/paella.png.jpg" alt="Dish 4">
-            <p>Fried chicken</p>
+            <p>Paella</p>
         </a>
         <a class="menu-item2">
             <img src="images/cerbo.png.jpg" alt="Dish 4">
-            <p>Fried chicken</p>
+            <p>Creamy Carbonara</p>
         </a>
     </div>
 </section>
@@ -89,37 +92,37 @@
         <div class="promo-grid">
             <a href="#" class="promo-item">
                 <img src="images/s5900.png.jpg" alt="Promo 1">
-                <p>Chicken poppers</p>
+                <p>Bundle 1</p>
             </a>
             <a href="#" class="promo-item">
                 <img src="images/sallmeat.png.jpg" alt="Promo 2">
-                <p>Lumpia</p>
+                <p>Bundle 2</p>
             </a>
             <a href="#" class="promo-item">
                 <img src="images/s8tray.png.jpg" alt="Promo 3">
-                <p>Inasal</p>
+                <p>Bundle 3</p>
             </a>
             <a href="#" class="promo-item">
                 <img src="images/sl12t.png.jpg" alt="Promo 4">
-                <p>Fried Chicken</p>
+                <p>Bundle 4</p>
             </a>
         </div>
         <div class="promo-grid2">
             <a href="#" class="promo-item">
                 <img src="images/rect7500.png.jpg" alt="Promo 4">
-                <p>Fried Chicken</p>
+                <p>Bundle 5</p>
             </a>
             <a href="#" class="promo-item">
                 <img src="images/rectl12t.png.jpg" alt="Promo 4">
-                <p>Fried Chicken</p>
+                <p>Bundle 6</p>
             </a>
             <a href="#" class="promo-item">
                 <img src="images/recttt.png.jpg" alt="Promo 4">
-                <p>Fried Chicken</p>
+                <p>Bundle 7</p>
             </a>
             <a href="#" class="promo-item">
                 <img src="images/medjs.png.jpg" alt="Promo 4">
-                <p>Fried Chicken</p>
+                <p>Bundle 8</p>
             </a>
         </div>
     </div>
@@ -178,6 +181,31 @@
     <div class="map">
         <h2>Find Us Here</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509879!2d144.9537363153162!3d-37.81720997975146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f7c11d7%3A0x5045675218ce6e0!2sRoxas%20Avenue%2C%20Roxas%20City%2C%20Capiz!5e0!3m2!1sen!2sph!4v1631614551753!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+<!--ordering-->
+<section class="order" id="order">
+    <div class="order-container">
+        <h2>Place Your Order</h2>
+        <form action="https://formspree.io/f/xldenakv" method="POST">
+            <div class="input-group">
+                <label for="name"></label>
+                <input type="text" id="name" name="name" required placeholder="Your Name">
+            </div>
+            <div class="input-group">
+                <label for="number"></label>
+                <input type="number" id="number" name="number" required placeholder="Your Number">
+            </div>
+            <div class="input-group">
+                <label for="email"></label>
+                <input type="email" id="email" name="email" required placeholder="Your Email">
+            </div>
+            <div class="input-group">
+                <label for="order-details"></label>
+                <textarea id="order-details" name="order-details" rows="5" required placeholder="Describe your order..."></textarea>
+            </div>
+            <button type="submit">Place Order</button>
+        </form>
     </div>
 </section>
 <!--FOOTER-->
