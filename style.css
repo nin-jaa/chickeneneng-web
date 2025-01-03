@@ -4,7 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body{
+  background-color: rgb(185, 185, 8);
+}
 /* Header Styles */
 header {
   background-color: rgb(185, 185, 8); /* Dark background color */
@@ -41,7 +43,9 @@ header .container {
   margin: 0 auto; /* Center the container */
   padding: 0 20px; /* Padding for left and right */
 }
-
+.container h1 {
+  color:  black;
+}
 .nav-linked {
   list-style: none; /* Remove bullet points */
   display: flex; /* Flexbox for horizontal layout */
@@ -50,18 +54,12 @@ header .container {
 .nav-linked li {
   margin-left: 20px; /* Space between menu items */
 }
-  
-.nav-linked a {
-  color: white; /* Link color */
-  text-decoration: none; /* Remove underline */
-  font-weight: bold; /* Bold text */
-}
 
 .nav-linked a {
   color: white; /* Link color */
   text-decoration: none; /* Remove underline */
   font-weight: bold; /* Bold text */
-  position: relative; /* Position relative for pseudo-element */
+  position: relative; /* Position relative for  pseudo-element */
 }
 
 .nav-linked a:hover {
@@ -390,34 +388,36 @@ header .container {
 /* Top Picks Section Styles */
 #top-picks {
   padding: 20px;
-  background-color: #f4f4f4; /* Light background for the section */
+  background-color: rgb(185, 185, 8); /* Light background for the section */
   margin-bottom: 20px; /* Space below the section */
 }
 
 #top-picks h2 {
   text-align: center; /* Center the heading */
   margin-bottom: 20px; /* Space below the heading */
-  color: #32a917; /* Green color for the heading */
+  color: black; /* Green color for the heading */
 }
 
 .top-picks-box {
   border: 1px solid #ccc; /* Border for the box */
   border-radius: 8px; /* Rounded corners for the box */
   padding: 20px; /* Padding inside the box */
-  background-color: #fff; /* White background for the box */
+  background-color: #d5d4dd; /* White background for the box */
 }
 
 .top-picks-container {
   display: flex; /* Use flexbox for layout */
   justify-content: space-around; /* Space items evenly */
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  align-items: stretch; /* Ensure all items stretch to the same height */
 }
 
 .top-pick {
   text-align: center; /* Center align text */
   margin: 10px; /* Space between items */
   flex: 1 1 30%; /* Allow items to grow and shrink, with a base width of 30% */
-  max-width: 200px; /* Set a maximum width for each item */
+  max-width: 250px; /* Set a maximum width for each item */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack content vertically */
 }
 
 .top-pick-box {
@@ -426,6 +426,9 @@ header .container {
   padding: 10px; /* Padding inside the box */
   background-color: #fff; /* White background for each box */
   transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+  flex: 1; /* Ensure the box stretches to fill the container */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack content vertically */
 }
 
 .top-pick-box:hover {
@@ -433,118 +436,125 @@ header .container {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
+.top-pics-containers {
+  background-color: #d5d4dd;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .top-pick-image {
   width: 100%; /* Full width for images */
-  height: auto; /* Maintain aspect ratio */
+  height: 100%; /* Maintain aspect ratio */
   border-radius: 8px; /* Rounded corners for images */
+  object-fit: cover; /* Ensure images fill the container */
 }
 
 .top-pick-text {
   margin-top: 10px; /* Space above the text */
   font-size: 16px; /* Font size for item names */
   color: #333; /* Dark color for text */
+  flex: 1; /* Ensure text takes up remaining space */
 }
 
 .top-pick-price {
   margin-top: 5px; /* Space above the price */
-  font-size: 14px; /* Font size for price */
+  font-size: 15px; /* Font size for price */
   color: #666; /* Gray color for price */
 }
 
-#menu {
-  max-width: 1200px; /* Limit the width for better readability */
-  margin: 50px auto; /* Center the menu section */
-  padding: 20px; /* Padding around the menu */
-  background-color: #d5d4dd; /* White background for the menu */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-h2 {
-  text-align: center; /* Center the heading */
-  color: #32a917; /* Green color for the heading */
-}
-
-
-
-.menu-items {
-  display: grid; /* Use grid layout */
-  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
-  gap: 20px; /* Space between items */
-}
-
-.menu-item {
-  display: flex;
-  flex-direction: column; /* Stack image and text vertically */
-  align-items: center; /* Center align items */
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  background-color: #fff; /* White background for each item */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
-}
-
-.menu-item:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-}
-
-.menu-image {
-  max-width: 100%; /* Ensure the image does not exceed the width of its container */
-  max-height: 150px; /* Set a maximum height for the images */
-  width: auto; /* Allow width to adjust automatically */
-  height: auto; /* Allow height to adjust automatically */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
-  border-radius: 8px; /* Optional: Add rounded corners */
-}
-
-.menu-text {
-  margin-top: 10px; /* Space between image and text */
-  text-align: center; /* Center align text */
-  font-weight: bold; /* Bold text for item names */
-}
-
-.menu-item.hidden {
-  display: none; /* Hide items that don't match the filter */
-}
-
-.menu-category {
-  border: 1px solid #ccc; /* Border for the category box */
-  border-radius: 8px; /* Rounded corners */
-  padding: 20px; /* Padding inside the box */
-  margin-bottom: 20px; /* Space between categories */
-  display: block; /* Initially hide categories */
+.menu {
+  background-color: rgb(185, 185, 8);
+  padding: 2em;
+  text-align: center;
+  }
+  
+  .menu-container {
   background-color: #d5d4dd;
-}
-
-.menu-category h3 {
-  margin-bottom: 10px; /* Space below the category title */
-}
-
-/* Filter Container Styles */
-.filter-container {
-  display: flex; /* Use flexbox for layout */
-  justify-content: space-between; /* Space between filters */
-  margin-bottom: 20px; /* Space below filters */
-}
-
-/* Filter Styles */
-.filter {
-  display: flex; /* Flexbox for alignment */
-  align-items: center; /* Center items vertically */
-}
-
-.filter label {
-  margin-right: 5px; /* Space between label and dropdown */
-  font-size: 14px; /* Smaller font size for labels */
-}
-
-.filter select {
-  padding: 5px; /* Smaller padding for dropdowns */
-  border: 1px solid #ccc; /* Border for dropdowns */
-  border-radius: 4px; /* Rounded corners */
-  font-size: 14px; /* Smaller font size for dropdown s */
-}
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  max-width: 1200px;
+  margin: 0 auto;
+  }
+  
+  .menu h2 {
+  color: black;
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  position: relative;
+  }
+  
+  /* Underline with glowing effect */
+  .menu h2::after {
+  content: "";
+  display: block;
+  width: 100%; /* Full width under the title */
+  height: 4px;
+  background-color: #333;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(51, 51, 51, 0.8), 0 0 20px rgba(51, 51, 51, 0.6); /* Glowing effect */
+  }
+  
+  /* Promo grid */
+  .menu-grid{
+  display: flex;
+  margin-top: 20px;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center;
+  gap: 2em;
+  }
+  
+  /* Promo cards */
+  .menu-item{
+  flex: 0 1 calc(25% - 2em); /* Allow 4 items per row with gap */
+  max-width: 300px; /* Optional: Max width for each promo item */
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  background-color: white;
+  border: 1px solid #ddd;  /* Light border around each card */
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Box shadow for each card */
+  transition: transform 0.3s ease;
+  }
+  
+  .menu-item img{
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  }
+  
+  .menu-item p{
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  }
+  
+  /* Hover effect for clickable cards */
+  .menu-item:hover{
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);  /* Stronger shadow on hover */
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+  .menu-item{
+    flex: 0 1 100%; /* Full width on smaller screens */
+    max-width: none; /* Remove max-width */
+  }
+  }
+  
+  @media (max-width: 480px) {
+  .menu h2 {
+    font-size: 2em; /* Smaller font size for smaller screens */
+  }
+  }
 
 .lightbox-content {
   display: flex;
@@ -719,7 +729,7 @@ h2 {
 .about-hero h2 {
     font-size: 2.5em; /* Title font size */
     margin-bottom: 10px; /* Space below the title */
-    color: white; /* Title color */
+    color: black; /* Title color */
 }
 
 .about-hero p {
@@ -816,7 +826,7 @@ h2 {
 .gallery h2 {
   font-size: 2.5em; /* Title font size */
   margin-bottom: 1em; /* Space below the title */
-  color: white; /* Title color */
+  color: black; /* Title color */
 }
 
 .gallery-container {
@@ -970,8 +980,6 @@ button {
 button:hover {
   background-color: #8c6a76; /* Darker color on hover */
 }
-
-
 
 .map {
   padding: 4em 2em; /* Padding for the map section */

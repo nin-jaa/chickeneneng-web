@@ -4,8 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MB's Food Hub</title>
-        <link rel="icon" href="Pics/Logo-Mbs.ico" type="image/x-icon"> <!-- Your favicon link -->
+        <title>Chickeneneng</title>
+        <link rel="icon" href=tle>
+        <link rel="icon" href="images/logo.png.ico" type="image/x-icon"> <!-- Your favicon link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
@@ -15,7 +16,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1>MB's Food Hub</h1>
+                <h1>Chickeneneng Party Tray's</h1>
             </div>
             <nav>
                 <label for="menu-toggle" class="menu-icon" onclick="openSidebar()">
@@ -26,7 +27,7 @@
                     <li><a href="index.html#promos">Promos</a></li>
                     <li><a href="index-menu.html">Menu</a></li>
                     <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#delivery">Delivery</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -41,7 +42,7 @@
             <li><a href="index.html#promos">Promos</a></li>
             <li><a href="index-menu.html">Menu</a></li>
             <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#delivery">Delivery</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
             <li><a href="index.html#contact">Contact</a></li>
         </ul>
     </div>
@@ -51,116 +52,53 @@
 </button>
 
 <section id="top-picks">
+    <div class="top-pics-containers">
     <h2>Top Picks</h2>
     <div class="top-picks-box"> <!-- New container for the top picks -->
         <div class="top-picks-container">
             <div class="top-pick">
                 <div class="top-pick-box">
-                    <img src="Foods/pizza.jpg" alt="Top Pick Pizza" class="top-pick-image">
-                    <div class="top-pick-text">Pizza</div>
-                    <div class="top-pick-price">$8</div>
+                    <img src="images/askog.png" alt="Top Pick Pizza" class="top-pick-image">
+                    <div class="top-pick-text">Scewers</div>
+                    <div class="top-pick-price">??</div>
                 </div>
             </div>
             <div class="top-pick">
                 <div class="top-pick-box">
-                    <img src="Foods/burger.jpg" alt="Top Pick Burger" class="top-pick-image">
-                    <div class="top-pick-text">Burger</div>
-                    <div class="top-pick-price">$12</div>
+                    <img src="images/sisig.png" alt="Top Pick Burger" class="top-pick-image">
+                    <div class="top-pick-text">Sisig</div>
+                    <div class="top-pick-price">??</div>
                 </div>
             </div>
             <div class="top-pick">
                 <div class="top-pick-box">
-                    <img src="Foods/sushi.jpg" alt="Top Pick Sushi" class="top-pick-image">
-                    <div class="top-pick-text">Sushi</div>
-                    <div class="top-pick-price">$20</div>
+                    <img src="images/lumpia.png" alt="Top Pick Sushi" class="top-pick-image">
+                    <div class="top-pick-text">Lumpia</div>
+                    <div class="top-pick-price">??</div>
                 </div>
             </div>
-        </div>
-    </div>
 </section>
-
-<section id="menu">
-    <h2>Menu</h2>
-    <div class="filter-container">
-        <!-- Category Filter -->
-        <div class="filter">
-            <label for="category">Choose a category:</label>
-            <select id="category" onchange="filterMenu()">
-                <option value="all">All</option>
-                <option value="food">Foods</option>
-                <option value="beverages">Beverages</option>
-            </select>
-        </div>
-        
-        <!-- Price Filter -->
-        <div class="filter">
-            <label for="price">Choose a price range:</label>
-            <select id="price" onchange="filterPrice()">
-                <option value="all">All</option>
-                <option value="low">Low (Under $10)</option>
-                <option value="medium">Medium ($10 - $20)</option>
-                <option value="high">High (Above $20)</option>
-            </select>
-        </div>
-    </div>
-    
-    <!-- Foods Category -->
-    <div class="menu-category food-category">
-        <h3>Foods</h3>
-        <div class="menu-items">
-            <div class="menu-item food" data-price="8">
-                <img src="Foods/pizza.jpg" alt="Pizza" class="menu-image">
-                <div class="menu-text">
-                    <div class="menu-name">Pizza</div>
-                    <div class="menu-price">$8</div>
-                </div>
-            </div>
-            <div class="menu-item food" data-price="12">
-                <img src="Foods/burger.jpg" alt="Burger" class="menu-image">
-                <div class="menu-text">
-                    <div class="menu-name">Burger</div>
-                    <div class="menu-price">$12</div>
-                </div>
-            </div>
-            <div class="menu-item food" data-price="15">
-                <img src="Foods/pasta.jpg" alt="Pasta" class="menu-image">
-                <div class="menu-text">
-                    <div class="menu-name">Pasta</div>
-                    <div class="menu-price">$15</div>
-                </div>
-            </div>
+<!-- Foods Category -->
+<section class="menu">
+    <div class="menu-container">
+        <h2>Foods</h2>
+        <div class="menu-grid">
+            <a href="#" class="menu-item">
+                <img src="images/menu,1.png" alt="Promo 1">
+                <p>Bundle 1</p>
+            </a>
+            <a href="#" class="menu-item">
+                <img src="images/menu,2.png" alt="Promo 2">
+                <p>Bundle 2</p>
+            </a>
+            <a href="#" class="menu-item">
+                <img src="images/menu,3.png" alt="Promo 3">
+                <p>Bundle 3</p>
+            </a>
             <!-- More menu items... -->
         </div>
     </div>
 
-    <!-- Beverages Category -->
-    <div class="menu-category beverage-category">
-        <h3>Beverages</h3>
-        <div class="menu-items">
-            <div class="menu-item beverages" data-price="5">
-                <img src="Foods/coffee.jpg" alt="Coffee" class="menu-image">
-                <div class="menu-text">
-                    <div class="menu-name">Coffee</div>
-                    <div class="menu-price">$5</div>
-                </div>
-            </div>
-            <div class="menu-item beverages" data-price="3">
-                <img src="Foods/tea.jpg" alt="Tea" class="menu-image">
-                <div class="menu-text">
-                    <div class="menu-name">Tea</div>
-                    <div class="menu-price">$3</div>
-                </div>
-            </div>
-            <div class="menu-item beverages" data-price="4">
-                <img src="Foods/juice.jpg" alt="Juice" class="menu-image">
-                <div class="menu-text">
-                    <div class="menu-name">Juice</div>
-                    <div class="menu-price">$4</div>
-                </div>
-            </div>
-            <!-- More menu items... -->
-        </div>
-    </div>
 </section>
 </body>
 </html>
