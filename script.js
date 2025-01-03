@@ -1,120 +1,169 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Cards functionality
-    const cardsContainer = document.querySelector(".box");
+function openLightbox(imageSrc) {
+    document.getElementById("lightbox-image").src = imageSrc; // Set the image source
+    document.getElementById("lightbox").style.display = "flex"; // Show the lightbox
+  }
   
-    if (cardsContainer) {
-      cardsContainer.addEventListener("click", (e) => {
-        const target = e.target.closest(".card");
+  // Close lightbox
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
   
-        if (!target) return;
   
-        cardsContainer.querySelectorAll(".card").forEach((card) => {
-          card.classList.remove("active");
-        });
+  // Show the button when the user scrolls down 20px from the top
+  window.onscroll = function() {
+      toggleBackToTopBtn();
+  };
   
-        target.classList.add("active");
+  function toggleBackToTopBtn() {
+      const backToTopBtn = document.getElementById("backToTopBtn");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          backToTopBtn.style.display = "block";
+      } else {
+          backToTopBtn.style.display = "none";
+      }
+  }
+  
+  // Smooth scroll back to the top when button is clicked
+  function scrollToTop() {
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
       });
+  }
+  
+  
+    /* Show the button when scrolling down */
+  window.onscroll = function() {
+    const backToTopBtn = document.getElementById("backToTopBtn");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopBtn.style.display = "block"; /* Show button */
+    } else {
+        backToTopBtn.style.display = "none"; /* Hide button */
     }
+  };
   
-    document.addEventListener('click', function(event) {
-      var cards = document.querySelectorAll('.card');
-      var clickedOutside = true;
+  function openSidebar() {
+    document.getElementById("sidebar").classList.add("open");
+  }
   
-      cards.forEach(function(card) {
-        if (card.contains(event.target)) {
-          clickedOutside = false;
-        }
-      });
+  function closeSidebar() {
+    document.getElementById("sidebar").classList.remove("open");
+  }
   
-      if (clickedOutside) {
-        cards.forEach(function(card) {
-          card.classList.remove('active');
-        });
+  
+  
+  let slideIndex = 1;
+  let slideInterval; // Declare the interval variable
+  showSlides(slideIndex);
+  
+  // Function to start the automatic slideshow
+  function startSlideshow() {
+      slideInterval = setInterval(() => {
+          showSlides(slideIndex += 1); // Move to the next slide
+      }, 5000); // Change slide every 5 seconds (5000 milliseconds)
+  }
+  
+  // Start the slideshow
+  startSlideshow();
+  
+  // Next/previous controls
+  function plusSlides(n) {
+      clearInterval(slideInterval); // Clear the existing interval
+      showSlides(slideIndex += n); // Show the next or previous slide
+      startSlideshow(); // Restart the slideshow timer
+  }
+  
+  // Show the current slide
+  function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlider");
+      
+      // Check if there are any slides
+      if (slides.length === 0) {
+          console.error("No slides found with the class 'mySlider'.");
+          return; // Exit the function if no slides are found
       }
-    });
   
-    const cardControllers = document.querySelectorAll("[data-card-controller]");
+      // Wrap around the slide index
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
   
-    cardControllers.forEach(controller => {
-      controller.addEventListener("click", (e) => {
-        const card = e.currentTarget.closest(".card");
-        const isVisible = card.dataset.visible;
+      // Hide all slides
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
   
-        if (isVisible === "false") {
-          card.setAttribute("data-visible", "true");
+      // Show the current slide
+      slides[slideIndex - 1].style.display = "block";  
+  }
+  
+  
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+  
+    // Get form data
+    const contactType = document.getElementById("contactType").value;
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+  
+    // Log the data (you can replace this with an actual submission to a server)
+    console.log("Contact Type:", contactType);
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Message:", message);
+  
+    // Optionally, reset the form
+    document.getElementById("contactForm").reset(); // Reset the form fields
+  });
+  
+  
+  // Function to filter menu items based on category
+  function filterMenu() {
+    const category = document.getElementById("category").value;
+    const foodCategory = document.querySelector('.food-category');
+    const beverageCategory = document.querySelector('.beverage-category');
+  
+    if (category === "all") {
+        foodCategory.style.display = "block"; // Show food category
+        beverageCategory.style.display = "block"; // Show beverage category
+    } else if (category === "food") {
+        foodCategory.style.display = "block"; // Show food category
+        beverageCategory.style.display = "none"; // Hide beverage category
+    } else if (category === "beverages") {
+        foodCategory.style.display = "none"; // Hide food category
+        beverageCategory.style.display = "block"; // Show beverage category
+    }
+  }
+  
+  // Function to filter menu items based on price
+  function filterPrice() {
+    const priceRange = document.getElementById("price").value;
+    const menuItems = document.querySelectorAll('.menu-item');
+  
+    menuItems.forEach(item => {
+        const price = parseFloat(item.getAttribute('data-price'));
+  
+        if (priceRange === "all") {
+            item.style.display = "block"; // Show all items
+        } else if (priceRange === "low" && price < 10) {
+            item.style.display = "block"; // Show low-priced items
+        } else if (priceRange === "medium" && price >= 10 && price <= 20) {
+            item.style.display = "block"; // Show medium-priced items
+        } else if (priceRange === "high" && price > 20) {
+            item.style.display = "block"; // Show high-priced items
         } else {
-          card.setAttribute("data-visible", "false");
+            item.style.display = "none"; // Hide items that don't match the filter
         }
-      });
     });
+  }
   
-    // Menu toggle functionality
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-    
-    menuToggle.addEventListener('click', function() {
-      menu.classList.toggle('show-menu');
-    });
-    
-    // Close the dropdown menu if the user clicks outside of it
-    window.addEventListener('click', function(event) {
-      if (!event.target.matches('.menu-toggle, .menu-toggle *')) {
-        if (menu.classList.contains('show-menu')) {
-          menu.classList.remove('show-menu');
-        }
-      }
-    });
+  // Call filterMenu on page load to show the default category
+  window.onload = function() {
+    filterMenu(); // Show all items by default
+  };
   
-    // Close the dropdown menu if the window is resized
-    window.addEventListener('resize', function() {
-      if (menu.classList.contains('show-menu')) {
-        menu.classList.remove('show-menu');
-      }
-    });
   
-    // Function to show or hide the offers dropdown based on the topic selected
-    document.getElementById('topic').addEventListener('change', function() {
-      var offersDropdown = document.getElementById('offersDropdown');
-      if (this.value === 'offers') {
-        offersDropdown.style.display = 'block';
-      } else {
-        offersDropdown.style.display = 'none';
-      }
-    });
   
-    // Add click event listeners to each ad link
-    document.querySelectorAll('#ads-section a').forEach(function(adLink) {
-      adLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        var offerType = this.getAttribute('data-offer-type');
   
-        // Set the topic dropdown to "Offers"
-        var topicDropdown = document.getElementById('topic');
-        topicDropdown.value = 'offers';
-  
-        // Show the offers dropdown
-        var offersDropdown = document.getElementById('offersDropdown');
-        offersDropdown.style.display = 'block';
-  
-        // Set the offer type dropdown to the respective ad type
-        var offerTypeDropdown = document.getElementById('offer-type');
-        offerTypeDropdown.value = offerType;
-  
-        // Scroll to the contact form
-        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  });
-  
-  $(document).ready(function() {
-    $('#pauseButton').click(function() {
-      $("article").toggleClass("paused");
-      var buttonText = $(this).text();
-      if (buttonText === "Pause") {
-        $(this).text("Play");
-      } else {
-        $(this).text("Pause");
-      }
-    });
-  });
   
