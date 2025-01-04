@@ -4,14 +4,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
-  background-color: rgb(185, 185, 8);
-}
 /* Header Styles */
+/* Make the header sticky */
 header {
-  background-color: rgb(185, 185, 8); /* Dark background color */
-  color: white; /* Text color */
-  padding: 10px 0; /* Padding for top and bottom */
+  position: sticky; /* Make the header sticky */
+  top: 0; /* Stick to the top of the viewport */
+  z-index: 1000; /* Ensure the header stays above other content */
+  background-color: wheat; /* Match your header background color */
+  padding: 10px 0; /* Adjust padding as needed */
+  border-radius: 5px; /* Optional: Add rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
 }
 .logo-text {
     font-size: 1.5em; /* Adjust the size as needed */
@@ -30,7 +32,6 @@ header {
 /* Header Button Hover Effect */
 header .nav-linked a:hover {
   background-color: rgba(460, 460, 460, 0.2); /* Light transparent background on hover */
-  color: #597a59; /* Change text color on hover */
   border-radius: 5px; /* Optional: Add rounded corners */
   padding: 10px; /* Optional: Add padding for better appearance */
 }
@@ -44,7 +45,7 @@ header .container {
   padding: 0 20px; /* Padding for left and right */
 }
 .container h1 {
-  color:  black;
+  color:  #ff6f61;
 }
 .nav-linked {
   list-style: none; /* Remove bullet points */
@@ -56,7 +57,7 @@ header .container {
 }
 
 .nav-linked a {
-  color: white; /* Link color */
+  color: #ff6f61; /* Link color */
   text-decoration: none; /* Remove underline */
   font-weight: bold; /* Bold text */
   position: relative; /* Position relative for  pseudo-element */
@@ -83,6 +84,35 @@ header .container {
   transform: scaleX(1); /* Scale to full width on hover */
 }
 
+/* Search Bar Styling */
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+.search-input {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.search-btn {
+  padding: 8px 12px;
+  background-color: #ff6f61;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  color: white;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #ff4a3d;
+}
 
 /* Hamburger Icon */
 .menu-icon {
@@ -236,7 +266,7 @@ header .container {
 
 
 .hero-btn {
-  background-color: #a02651; /* Button color */
+  background-color: #FF5D00; /* Button color */
   color: white; /* Button text color */
   padding: 10px 20px; /* Padding for the button */
   border: none; /* No border */
@@ -298,7 +328,6 @@ header .container {
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-
 
 /* Back to Top Button */
 #backToTopBtn {
@@ -388,21 +417,21 @@ header .container {
 /* Top Picks Section Styles */
 #top-picks {
   padding: 20px;
-  background-color: rgb(185, 185, 8); /* Light background for the section */
+  background-color: white; /* Light background for the section */
   margin-bottom: 20px; /* Space below the section */
 }
 
 #top-picks h2 {
   text-align: center; /* Center the heading */
   margin-bottom: 20px; /* Space below the heading */
-  color: black; /* Green color for the heading */
+  color: #ff6f61; /* Green color for the heading */
 }
 
 .top-picks-box {
   border: 1px solid #ccc; /* Border for the box */
   border-radius: 8px; /* Rounded corners for the box */
   padding: 20px; /* Padding inside the box */
-  background-color: #d5d4dd; /* White background for the box */
+  background-color: wheat; /* White background for the box */
 }
 
 .top-picks-container {
@@ -437,7 +466,7 @@ header .container {
 }
 
 .top-pics-containers {
-  background-color: #d5d4dd;
+  background-color: wheat;
   padding: 2em;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
@@ -466,13 +495,13 @@ header .container {
 }
 
 .menu {
-  background-color: rgb(185, 185, 8);
+  background-color: white;
   padding: 2em;
   text-align: center;
   }
   
   .menu-container {
-  background-color: #d5d4dd;
+  background-color: wheat;
   padding: 2em;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
@@ -481,7 +510,7 @@ header .container {
   }
   
   .menu h2 {
-  color: black;
+  color: #ff6f61;
   font-size: 2.5em;
   margin-bottom: 1.5em;
   position: relative;
@@ -493,7 +522,7 @@ header .container {
   display: block;
   width: 100%; /* Full width under the title */
   height: 4px;
-  background-color: #333;
+  background-color: #ff6f61;
   margin-top: 10px;
   box-shadow: 0 0 10px rgba(51, 51, 51, 0.8), 0 0 20px rgba(51, 51, 51, 0.6); /* Glowing effect */
   }
@@ -556,155 +585,139 @@ header .container {
   }
   }
 
-.lightbox-content {
-  display: flex;
-  flex-direction: column; /* Stack children vertically */
-  align-items: center; /* Center align children */
-}
-
-#lightbox {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  cursor: pointer;
-}
-
-/* Lightbox image styling */
-#lightbox img {
-  max-width: 50%; /* Set a maximum width for the image */
-  max-height:50%; /* Set a maximum height for the image */
-  width: auto; /* Allow width to adjust automatically */
-  height: auto; /* Allow height to adjust automatically */
-  object-fit: contain; /* Maintain the aspect ratio without cropping */
-  border: 5px solid #fff; /* Optional border */
-  border-radius: 8px; /* Optional rounded corners */
-}
-
 /* Promo Section Styles */
 .promos {
-  background-color: rgb(185, 185, 8);
+  background-color: white;
   padding: 2em;
   text-align: center;
-  }
-  
-  .promo-container {
-  background-color: #d5d4dd;
+}
+
+.promo-container {
+  background-color: wheat;
   padding: 2em;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
   max-width: 1200px;
   margin: 0 auto;
-  }
-  
-  .promos h2 {
-  color: black;
+}
+
+.promos h2 {
+  color: #ff6f61;
   font-size: 2.5em;
   margin-bottom: 1.5em;
   position: relative;
-  }
-  
-  /* Underline with glowing effect */
-  .promos h2::after {
+}
+
+/* Underline with glowing effect */
+.promos h2::after {
   content: "";
   display: block;
   width: 100%; /* Full width under the title */
   height: 4px;
-  background-color: #333;
+  background-color: #ff6f61;
   margin-top: 10px;
   box-shadow: 0 0 10px rgba(51, 51, 51, 0.8), 0 0 20px rgba(51, 51, 51, 0.6); /* Glowing effect */
-  }
-  
-  /* Promo grid */
-  .promo-grid, .promo-grid2 {
+}
+
+/* Promo grid */
+.promo-grid, .promo-grid2 {
   display: flex;
   margin-top: 20px;
   grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
   flex-wrap: wrap; /* Allow items to wrap to the next line */
   justify-content: center;
   gap: 2em;
-  }
-  
-  /* Promo cards */
-  .promo-item, .promo-item2 {
+}
+
+/* Promo cards */
+.promo-item, .promo-item2 {
   flex: 0 1 calc(25% - 2em); /* Allow 4 items per row with gap */
   max-width: 300px; /* Optional: Max width for each promo item */
   text-align: center;
   text-decoration: none;
   color: inherit;
   background-color: white;
-  border: 1px solid #ddd;  /* Light border around each card */
+  border: 1px solid #ddd; /* Light border around each card */
   border-radius: 8px;
   padding: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Box shadow for each card */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for each card */
   transition: transform 0.3s ease;
-  }
-  
-  .promo-item img, .promo-item2 img {
+  cursor: pointer; /* Add cursor pointer for clickable cards */
+}
+
+.promo-item img, .promo-item2 img {
   width: 100%;
-  height: 250px;
+  height: 290px;
   object-fit: cover;
   border-radius: 8px;
-  }
-  
-  .promo-item p, .promo-item2 p {
+}
+
+.promo-item p, .promo-item2 p {
   margin-top: 10px;
   font-size: 1.2em;
   font-weight: bold;
-  }
-  
-  /* Hover effect for clickable cards */
-  .promo-item:hover, .promo-item2:hover {
+}
+
+/* Hover effect for clickable cards */
+.promo-item:hover, .promo-item2:hover {
   transform: scale(1.05); /* Slightly enlarge the card on hover */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);  /* Stronger shadow on hover */
-  }
-  
-  /* Media Queries for Responsiveness */
-  @media (max-width: 768px) {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
   .promo-item, .promo-item2 {
     flex: 0 1 100%; /* Full width on smaller screens */
     max-width: none; /* Remove max-width */
   }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
   .promos h2 {
     font-size: 2em; /* Smaller font size for smaller screens */
   }
-  }
+}
 
-/* Lightbox container */
+/* Lightbox Styles */
 #lightbox {
   display: none; /* Hidden by default */
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
   background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  cursor: pointer;
 }
 
-/* Lightbox image styling */
 #lightbox img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 50%;
+  max-height: 50%;
   border: 5px solid #fff;
   border-radius: 8px;
 }
+
+/* Close button styling */
+#close-lightbox {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+#close-lightbox:hover {
+  color: #ccc;
+}
+
 /* About Section Styles */
 .about {
     padding: 4em 2em; /* Increased padding for more space */
-    background-color: rgb(185, 185, 8); /* Light background color */
+    background-color: white; /* Light background color */
     
 }
 
@@ -729,7 +742,7 @@ header .container {
 .about-hero h2 {
     font-size: 2.5em; /* Title font size */
     margin-bottom: 10px; /* Space below the title */
-    color: black; /* Title color */
+    color: #ff6f61; /* Title color */
 }
 
 .about-hero p {
@@ -750,7 +763,7 @@ header .container {
 }
 
 .about-text {
-  background-color: #d5d4dd; /* White background for the content */
+  background-color: wheat; /* White background for the content */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   padding: 2em; /* Padding inside the content */
@@ -772,26 +785,26 @@ header .container {
 
 .about-text h3 {
     font-size: 2em; /* Subheading font size */
-    color: #27242e; /* Color for subheadings */
+    color: #ff6f61; /* Color for subheadings */
     margin-bottom: 10px; /* Space below the subheading */
 }
 
 .about-text p {
-    font-size: 1.1em; /* Paragraph font size */
+    font-size: 1.3em; /* Paragraph font size */
     line-height: 1.6; /* Line height for readability */
 }
 
 .about-intro {
   text-align: center; /* Center align text */
   margin: 2em 0; /* Space above and below the intro section */
-  background-color: #d5d4dd; /* White background for the box */
+  background-color: wheat; /* White background for the box */
   border-radius: 8px; /* Rounded corners for the box */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   padding: 2em; /* Padding inside the box */
 }
 
 .about-intro p {
-  font-size: 1.1em; /* Paragraph font size */
+  font-size: 1.3em; /* Paragraph font size */
     line-height: 1.6; /* Line height for readability */
 }
 
@@ -819,14 +832,14 @@ header .container {
 /* Gallery Section Styles */
 .gallery {
   padding: 4em 2em; /* Padding for the gallery section */
-  background-color: rgb(185, 185, 8); /* Light background color */
+  background-color: white; /* Light background color */
   text-align: center; /* Center align text */
 }
 
 .gallery h2 {
   font-size: 2.5em; /* Title font size */
   margin-bottom: 1em; /* Space below the title */
-  color: black; /* Title color */
+  color: #ff6f61; /* Title color */
 }
 
 .gallery-container {
@@ -876,19 +889,31 @@ header .container {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-  justify-content: center;
-  align-items: center;
   z-index: 1000;
-  cursor: pointer;
 }
 
 #lightbox img {
-  max-width: 90%; /* Set a maximum width for the image */
-  max-height: 90%; /* Set a maximum height for the image */
-  border: 5px solid #fff; /* Optional border */
-  border-radius: 8px; /* Optional rounded corners */
+  margin-left: 310px;
+  max-width: 50%;
+  max-height: 50%;
+  border: 5px solid #fff;
+  border-radius: 8px;
 }
 
+/* Close button styling */
+#close-lightbox {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+#close-lightbox:hover {
+  color: #ccc;
+}
 /* Navigation buttons for slideshow */
 .prev-slide, .next-slide {
     cursor: pointer;
@@ -925,195 +950,183 @@ header .container {
   object-fit: contain; /* Ensure the entire image is visible without cropping */
   border-radius: 8px; /* Optional: Add rounded corners */
 }
-
-.contact {
-  padding: 4em 2em; /* Padding for the contact section */
-  background-color: rgb(185, 185, 8); /* Light background color */
-}
-
+/*Contact**/
 .contact-container {
-  max-width: 800px; /* Limit the width for better readability */
-  margin: 0 auto; /* Center the container */
-  background-color: #d5d5d5; /* White background for the form */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 2em; /* Padding inside the container */
+  display: flex;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 50px;
+  padding: 20px;
+  background-color: wheat;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-left: 75px;
 }
 
-.contact h2 {
-  text-align: center; /* Center the heading */
-  margin-bottom: 20px; /* Space below the heading */
-  color: #27242e; /* Heading color */
-  font-size: 2.5em;
+/* Left Section: Contact Form */
+.contact-form {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.contact-form h2{
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff6f61;
+}
+
+.contact-form p {
+  font-size: 1.1rem;
+  color: black;
+  margin-bottom: 30px;
 }
 
 .form-group {
-  margin-bottom: 15px; /* Space between form groups */
+  margin-bottom: 20px;
 }
 
-label {
-  display: block; /* Block display for labels */
-  margin-bottom: 5px; /* Space below labels */
-}
-
-input[type="text"],
-input[type="email"],
-textarea,
-select {
-  width: 100%; /* Full width for inputs */
-  padding: 10px; /* Padding inside inputs */
-  border: 1px solid #ccc; /* Border for inputs */
-  border-radius: 4px; /* Rounded corners */
-}
-
-button {
-  background-color: #592e3d; /* Button color */
-  color: white; /* Button text color */
-  padding: 10px 20px; /* Padding for the button */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor */
-  font-size: 1em; /* Font size for the button */
-  transition: background-color 0.3s; /* Smooth transition */
-}
-
-button:hover {
-  background-color: #8c6a76; /* Darker color on hover */
-}
-
-.map {
-  padding: 4em 2em; /* Padding for the map section */
-  background-color: rgb(185, 185, 8); /* Light background color */
-  text-align: center; /* Center align text */
-}
-
-.map-container {
-  max-width: 1200px; /* Limit the width for better readability */
-  margin: 0 auto; /* Center the container */
-  background-color: #d5d4dd; /* White background for the container */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  padding: 2em; /* Padding inside the container */
-}
-
-.map-container h2 {
-  color: #27242e; /* Dark color for the heading */
-  font-size: 2.5em; /* Font size for the heading */
-  margin-bottom: 10px; /* Space below the heading */
-}
-
-.map-container p {
-  color: #555; /* Gray color for the paragraph */
-  font-size: 1.2em; /* Font size for the paragraph */
-  margin-bottom: 20px; /* Space below the paragraph */
-}
-
-iframe {
-  border-radius: 8px; /* Rounded corners for the iframe */
-}
-
-footer {
-  background-color: #121212;
-  color: #d0d6d0;
-  padding: 40px 60px;
-  
-}
-
-.footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto; /* Center the footer content */
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.footer-logo h1 {
-  font-size: 1.5em;
-}
-
-.footer-logo-image {
-  width: 90px; /* Increased logo size */
-  height: 90px; /* Increased logo size */
-  border-radius: 50%; /* Make logo circular */
-  object-fit: cover; /* Ensure the image covers the circle */
-  margin-bottom: 10px;
-  border: 1px solid #27242e;
-}
-
-.footer-info {
-  display: flex;
-  flex-direction: column; /* Stack contact and social sections */
-  gap: 20px; /* Space between sections */
-}
-
-.footer-contact, .footer-social {
-  flex: 1; /* Allow sections to grow */
-}
-
-.footer-contact h4, .footer-follow h4 {
-  color: #d5d5d5;
-  margin-bottom: 10px;
-  font-size: 2.2em;
-}
-
-.footer-contact p {
-  font-size: 1.2em;
+.form-group label {
+  display: block;
+  font-size: 1.0rem;
+  color: black;
   margin-bottom: 5px;
 }
 
-.footer-contact a {
-  
-  text-decoration: none;
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
 }
 
-/* Social Media Links Styling */
-.footer-social .social-icons, .footer-follow .social-icons {
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form-group button {
+  background-color: #FF5D00;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+  background-color: #e65a50;
+}
+
+/* Right Section: Google Map */
+.contact-map {
+  flex: 1;
+  height: 500px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.contact-map h2{
+font-size: 2rem;
+margin-bottom: 20px;
+color: #ff6f61;
+}
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+/* Footer Container */
+.footer-container {
   display: flex;
-  gap: 10px; /* Space between social icons */
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #000; /* Changed to black */
+  border-top: 1px solid #333; /* Optional: Darker border */
 }
 
-.footer-social a i, .footer-follow a i, .footer-logo-image {
-  font-size: 2.0em;
-  color: #d0d6d0;
-  transition: transform 0.3s;
-}
-
-.footer-social a:hover i, .footer-follow a:hover i, .footer-logo-image:hover {
-  color: #d5d4dd;
-  transform: scale(1.1);
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+  text-align: center;
+  color: #fff; /* Changed text color to white */
 }
 
 .footer-bottom {
   text-align: center;
-  padding-top: 35px; /* Adjust this value */
-  padding-bottom: 1px; /* Add or adjust this value */
-  font-size: 0.9em;
-  color: #d0d6d0;
+  padding: 10px;
+  background-color: #000; /* Changed to black */
+  border-top: 1px solid #333; /* Optional: Darker border */
+  color: #fff; /* Changed text color to white */
 }
 
-.footer-hours {
-  background-color: #a02651; /* Dark background color */
-  color: white; /* Text color */
-  padding: 15px; /* Padding around the box */
-  border-radius: 8px; /* Rounded corners */
-  text-align: center; /* Center align text */
-  margin-top: 20px; /* Space above the box */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+.footer-logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
 }
 
-.footer-hours h4 {
-  margin-bottom: 10px; /* Space below the heading */
-  font-size: 1.5em; /* Larger font size for the heading */
-  font-weight: bold; /* Bold text */
+.footer-center a, .footer-right p {
+  margin: 5px 0;
+  color: #fff; /* Changed text color to white */
+  text-decoration: none;
 }
 
-.footer-hours p {
-  margin: 5px 0; /* Space between paragraphs */
-  font-size: 1.2em; /* Font size for the hours */
+.footer-center a:hover {
+  color: #ccc; /* Changed hover color to light gray */
+}
+/* Responsive Design for Contact and Footer */
+
+/* For smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .contact-container {
+      flex-direction: column;
+      padding: 20px;
+  }
+
+  .contact-form {
+      padding-right: 0;
+      margin-bottom: 30px;
+  }
+
+  .contact-map {
+      height: 300px;
+  }
+
+  .footer-container {
+      flex-direction: column;
+      padding: 10px;
+  }
+
+  .footer-left, .footer-center, .footer-right {
+      flex: 1;
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+      padding: 10px;
+  }
+}
+
+/* For even smaller screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .contact-form h2 {
+      font-size: 1.5rem;
+  }
+
+  .contact-map iframe {
+      height: 200px;
+  }
+
+  .footer-left, .footer-center, .footer-right {
+      font-size: 0.8rem;
+  }
+
+  .footer-bottom {
+      font-size: 0.8rem;
+  }
 }

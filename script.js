@@ -1,3 +1,16 @@
+//for promo
+function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    lightboxImage.src = imageSrc; // Set the image source
+    lightbox.style.display = 'flex'; // Show the lightbox
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none'; // Hide the lightbox
+}
+//for gallery
 function openLightbox(imageSrc) {
     document.getElementById("lightbox-image").src = imageSrc; // Set the image source
     document.getElementById("lightbox").style.display = "flex"; // Show the lightbox
@@ -162,8 +175,6 @@ function openLightbox(imageSrc) {
   window.onload = function() {
     filterMenu(); // Show all items by default
   };
-  
-  
   
   
   

@@ -14,10 +14,14 @@
     <header>
         <div class="container">
             <div class="logo">
-                <a href="images/logo.png.ico" onclick="openLightbox('Pics/Logo.jpg'); return false;">
-                    <img src="images/logo.png.ico" alt="Chickenneneng Logo" class="logo-image">
+                <img  href="#" src="images/logo.png.ico" alt="Chickenneneng Logo" class="logo-image">
                 </a>
             </div>
+             <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." class="search-input">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
             <nav>
                 <label for="menu-toggle" class="menu-icon" onclick="openSidebar()">
                     &#9776; <!-- Hamburger icon -->
@@ -59,8 +63,8 @@
         <div class="slide" style="background-image: url('images/sisig.png');"></div>
     </div>
     <div class="hero-content">
-        <h1> <span class="logo-text">Welcome to Chicken-neneng</span></h1>
-        <p>We provide instant catering quality food and affordasulit price!<p>
+        <h1> <span class="logo-text">Welcome to Chicken-neneng</span></h1><br>
+        <p>We provide instant catering quality food and affordasulit price!<p><br>
         <a href="#menu" class="hero-btn">Explore Our Menu</a>
     </div>
 </section>
@@ -72,49 +76,49 @@
     <div class="promo-container">
         <h2>Promos</h2>
         <div class="promo-grid">
-            <a href="#" class="promo-item">
+            <a class="promo-item" onclick="openLightbox('images/s5900.png.jpg')">
                 <img src="images/s5900.png.jpg" alt="Promo 1">
                 <p>Bundle 1</p>
             </a>
-            <a href="#" class="promo-item">
+            <a class="promo-item" onclick="openLightbox('images/sallmeat.png.jpg')">
                 <img src="images/sallmeat.png.jpg" alt="Promo 2">
                 <p>Bundle 2</p>
             </a>
-            <a href="#" class="promo-item">
+            <a class="promo-item" onclick="openLightbox('images/s8tray.png.jpg')">
                 <img src="images/s8tray.png.jpg" alt="Promo 3">
                 <p>Bundle 3</p>
             </a>
-            <a href="#" class="promo-item">
+            <a class="promo-item" onclick="openLightbox('images/sl12t.png.jpg')">
                 <img src="images/sl12t.png.jpg" alt="Promo 4">
-                <p>Bundle 4</p>
+                <p>Bundle  4</p>
             </a>
         </div>
         <div class="promo-grid2">
-            <a href="#" class="promo-item">
-                <img src="images/rect7500.png.jpg" alt="Promo 4">
+            <a class="promo-item" onclick="openLightbox('images/rect7500.png.jpg')">
+                <img src="images/rect7500.png.jpg" alt="Promo 5">
                 <p>Bundle 5</p>
             </a>
-            <a href="#" class="promo-item">
-                <img src="images/rectl12t.png.jpg" alt="Promo 4">
+            <a class="promo-item" onclick="openLightbox('images/rectl12t.png.jpg')">
+                <img src="images/rectl12t.png.jpg" alt="Promo 6">
                 <p>Bundle 6</p>
             </a>
-            <a href="#" class="promo-item">
-                <img src="images/recttt.png.jpg" alt="Promo 4">
+            <a class="promo-item" onclick="openLightbox('images/recttt.png.jpg')">
+                <img src="images/recttt.png.jpg" alt="Promo 7">
                 <p>Bundle 7</p>
             </a>
-            <a href="#" class="promo-item">
-                <img src="images/medjs.png.jpg" alt="Promo 4">
+            <a class="promo-item" onclick="openLightbox('images/medjs.png.jpg')">
+                <img src="images/medjs.png.jpg" alt="Promo 8">
                 <p>Bundle 8</p>
             </a>
         </div>
     </div>
 </section>
 
-  <!-- Lightbox for fullscreen images -->
+<!-- Lightbox for fullscreen images -->
 <div id="lightbox" onclick="closeLightbox()">
+    <span id="close-lightbox">&times;</span>
     <div class="lightbox-content">
         <img id="lightbox-image" src="" alt="Fullscreen Image">
-        <!-- Removed the title element -->
     </div>
 </div>
 
@@ -122,14 +126,12 @@
 <section class="about" id="about">
     <div class="about-container">
         <div class="about-hero">
-            <h2>About Us</h2>
-            <p>Discover the story behind Chickeneneng</p>
-
 <div class="about-intro">
     <a href="images/logo.png.ico" onclick="openLightbox('Pics/Logo.jpg'); return false;">
         <img src="images/logo.png.ico" alt="Intro Image" class="intro-image">
     </a>
-    <h3>Introduction</h3>
+    <h2>About Us</h2>
+    <p>Discover the story behind Chickeneneng</p><br>
     <p>Welcome to Chickeneneng Party Tray's! We are dedicated to bringing joy to your gatherings with our delicious and flavorful chicken party trays. Whether it's a small family celebration or a large corporate event, our trays are designed to delight every palate.</p>
    
 </div>
@@ -151,119 +153,114 @@
 <section class="gallery" id="gallery">
     <h2>Gallery</h2>
     <div class="gallery-container">
-        <div class="gallery-item" onclick="openLightbox('image1.png')">
+        <div class="gallery-item" onclick="openLightbox('images/askog.png')">
             <img src="images/askog.png" alt="Gallery Image 1">
         </div>
-        <div class="gallery-item" onclick="openLightbox('image2.png')">
+        <div class="gallery-item" onclick="openLightbox('images/buffalo.png')">
             <img src="images/buffalo.png" alt="Gallery Image 2">
         </div>
-        <div class="gallery-item" onclick="openLightbox('image3.png')">
+        <div class="gallery-item" onclick="openLightbox('images/chickenpops.png')">
             <img src="images/chickenpops.png" alt="Gallery Image 3">
         </div>
-        <div class="gallery-item" onclick="openLightbox('image4.png')">
+        <div class="gallery-item" onclick="openLightbox('images/lumpia.png')">
             <img src="images/lumpia.png" alt="Gallery Image 4">
         </div>
-        <div class="gallery-item" onclick="openLightbox('image5.png')">
+        <div class="gallery-item" onclick="openLightbox('images/sisig.png')">
             <img src="images/sisig.png" alt="Gallery Image 5">
         </div>
-        <div class="gallery-item" onclick="openLightbox('image6.png')">
+        <div class="gallery-item" onclick="openLightbox('images/fried.png')">
             <img src="images/fried.png" alt="Gallery Image 6">
         </div>
     </div>
 </section>
 
 <!-- Lightbox for fullscreen images -->
-<div id="lightbox" onclick="closeLightbox()">
+<div id="lightbox">
+    <span id="close-lightbox" onclick="closeLightbox()">&times;</span>
     <div class="lightbox-content">
         <img id="lightbox-image" src="" alt="Fullscreen Image">
     </div>
 </div>
-
-
-
-<section class="contact" id="contact">
-    <div class="contact-container">
-        <h2>Contact Us</h2>
-        <form id="contactForm" action="https://formspree.io/f/xnnnzzwk" method="POST">
-            <div class="form-group">
-                <label for="contactType">Select Contact Type:</label>
-                <select id="contactType" name="contactType" required>
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="report">Report</option>
-                    <option value="message">Send us a Message</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Your Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-</section>
-
-<!-- Google Map Section -->
-<section class="map" id="map">
-    <div class="map-container">
-        <h2>Our Location</h2>
-        <p>Visit us at our store to enjoy delicious meals!</p>
-        <a href="https://www.google.com/maps/place/Roxas+Avenue+(Infront+of+Filamer)+Roxas+City,+Capiz" target="_blank" rel="noopener noreferrer">
-            <iframe 
-                src="https://www.google.com/maps/place/Chickeneneng/@11.5756509,122.7533475,20z/data=!4m6!3m5!1s0x33a5f3515ec56151:0xae67104543a8c653!8m2!3d11.5757038!4d122.7533033!16s%2Fg%2F11hz8q22br?hl=en-US&entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" 
-                width="100%" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
-        </a>
-    </div>
-</section>
-
-<footer>
-    <div class="footer-content" id="footer">
-        <div class="footer-logo">
-            <a href="images/logo.png.ico" onclick="openLightbox('Pics/Logo.jpg'); return false;">
-                <img src="images/logo.png.ico" alt="Logo" class="footer-logo-image">
-            </a>
-            <h1>Chickeneneng Party Tray's</h1>
+<!-- Contact Us Section -->
+<div class="contact-container">
+    <!-- Left Section: Contact Form -->
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <p>Have questions or feedback? Fill out the form below, and we'll get back to you as soon as possible!</p>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required>
         </div>
-        
-        <div class="footer-info">
-            <div class="footer-contact">
-               <h4>Contact Us</h4>
-                <p>Email: <a href="mailto:chickeneneng@gmail.com">chickeneneng@gmail.com</a></p>
-                <p>Phone: 09287678595</p>
-                <p>Address: Roxas Avenue (Infront of Filamer) Roxas City,Capiz</p>
-                <p><a href="https://m.me/325099922226364" target="_blank" rel="noopener noreferrer">Follow</a> or <a href="https://m.me/325099922226364" target="_blank" rel="noopener noreferrer">Message Us on Facebook</a></p>
-            </div>
+        <div class="form-group">
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" required>
         </div>
-        
-        <!-- Redesigned "WE ARE OPEN" Box -->
-        <div class="footer-hours">
-            <h4>WE ARE OPEN</h4>
-            <div> <i class="fas fa-clock"></i> <!-- Clock icon --> </div>
-            <p>Monday - Sunday</p>
-            <p>9:00 AM to 9:00 PM</p>
+        <div class="form-group">
+          <label for="message">Your Message:</label>
+          <textarea id="message" name="message" required></textarea>
         </div>
+        <div class="form-group">
+          <button type="submit">Send Message</button>
+        </div>
+      </form>
     </div>
+
+<!-- Right Section: Google Map -->
+    <div class="contact-map">
+        <h2>Visit Our Location</h2><br>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!4v1735992733338!6m8!1m7!1sptv7gpxczdKtBQGQ4MZKRg!2m2!1d11.5756740513963!2d122.7531561416079!3f76.99661!4f0!5f0.7820865974627469"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <!-- Left Section: Logo and Store Name -->
+            <div class="footer-left">
+                <img src="images/logo.png.ico" alt="Chickeneneng Logo" class="footer-logo">
+                <h3>Chickeneneng Party Tray's</h3>
+            </div>
     
-    <div class="footer-bottom">
-        <p>© 2019 Chickeneneng party tray's All rights reserved</p>
-    </div>
-</footer>
-
-
-
+            <!-- Center Section: Contact Information -->
+            <div class="footer-center">
+                <h4>Contact Us</h4>
+                <p>
+                    <i class="fas fa-envelope"></i> 
+                    Email: <a href="mailto:chickeneneng@gmail.com">chickeneneng@gmail.com</a>
+                </p>
+                <p>
+                    <i class="fas fa-phone"></i> 
+                    Phone: 09287678595
+                </p>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> 
+                    Address: Roxas Avenue (Infront of Filamer) Roxas City, Capiz
+                </p>
+                <p>
+                    <i class="fab fa-facebook-messenger"></i> 
+                    <a href="https://m.me/325099922226364" target="_blank" rel="noopener noreferrer">Message Us on Facebook</a>
+                </p>
+            </div>
+    
+            <!-- Right Section: Store Hours -->
+            <div class="footer-right">
+                <h4>Store Hours</h4>
+                <p>
+                    <i class="fas fa-clock"></i> 
+                    Monday - Saturday
+                </p>
+                <p>9:00 AM to 9:00 PM</p>
+            </div>
+        </div>
+    
+        <!-- Bottom Line: Copyright Notice -->
+        <div class="footer-bottom">
+            <p>© 2019 Chickeneneng Party Tray's. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
