@@ -272,8 +272,8 @@ header .container {
   border: none; /* No border */
   border-radius: 5px; /* Rounded corners */
   text-decoration: none; /* No underline */
-  font-size: 1.2em; /* Font size for the button */
-  transition: background-color 0.3s; /* Smooth transition */
+  font-size: 1.0em; /* Font size for the button */
+  transition: 0.3s; /* Smooth transition */
 }
 
 .hero-btn:hover {
@@ -952,6 +952,7 @@ header .container {
 }
 /*Contact**/
 .contact-container {
+  text-align: center;
   display: flex;
   align-items: flex-start;
   max-width: 1100px;
@@ -967,6 +968,8 @@ header .container {
 .contact-form {
   flex: 1;
   padding-right: 40px;
+  text-align: center;
+  justify-content: center;
 }
 
 .contact-form h2{
