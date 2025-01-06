@@ -1088,11 +1088,15 @@ color: #ff6f61;
   .contact-container {
       flex-direction: column;
       padding: 20px;
+      text-align: center;
+      justify-content: center;
   }
 
   .contact-form {
       padding-right: 0;
       margin-bottom: 30px;
+      text-align: center;
+      justify-content: center;
   }
 
   .contact-map {
