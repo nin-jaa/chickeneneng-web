@@ -14,6 +14,7 @@ header {
   padding: 10px 0; /* Adjust padding as needed */
   border-radius: 5px; /* Optional: Add rounded corners */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+  width: 100%;
 }
 .logo-text {
     font-size: 1.5em; /* Adjust the size as needed */
@@ -45,7 +46,7 @@ header .container {
   padding: 0 20px; /* Padding for left and right */
 }
 .container h1 {
-  color:  #ff6f61;
+  color: #fc4f3f;
 }
 .nav-linked {
   list-style: none; /* Remove bullet points */
@@ -57,7 +58,7 @@ header .container {
 }
 
 .nav-linked a {
-  color: #ff6f61; /* Link color */
+  color: #fc4f3f; /* Link color */
   text-decoration: none; /* Remove underline */
   font-weight: bold; /* Bold text */
   position: relative; /* Position relative for  pseudo-element */
@@ -237,7 +238,7 @@ header .container {
   background-image: url(''); /* Replace with your hero image path */
   background-size: cover; /* Cover the entire section */
   background-position: center; /* Center the image */
-  height: 400px; /* Set height for the hero section */
+  height: 700vh; /* Set height for the hero section */
   display: flex; /* Use flexbox for centering */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
@@ -272,8 +273,25 @@ header .container {
   border: none; /* No border */
   border-radius: 5px; /* Rounded corners */
   text-decoration: none; /* No underline */
-  font-size: 1.0em; /* Font size for the button */
+  font-size: 0.9em; /* Font size for the button */
   transition: 0.3s; /* Smooth transition */
+}
+
+.nav-linked a::after {
+  content: ''; /* Create a pseudo-element */
+  display: block; /* Make it a block element */
+  width: 100%; /* Full width */
+  height: 2px; /* Height of the underline */
+  background: #8c6a76; /* Color of the underline */
+  position: absolute; /* Position it absolutely */
+  left: 0; /* Align to the left */
+  bottom: -5px; /* Position it below the text */
+  transform: scaleX(0); /* Start with scale 0 */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.nav-linked a:hover::after {
+  transform: scaleX(1); /* Scale to full width on hover */
 }
 
 .hero-btn:hover {
@@ -336,7 +354,7 @@ header .container {
   bottom: 20px;
   right: 20px;
   z-index: 100; /* Make sure it’s above other elements */
-  background-color: #a02651; /* Button color */
+  background-color: #fc4f3f; /* Button color */
   color: white;
   padding: 12px 16px;
   border: none;
@@ -398,6 +416,10 @@ header .container {
   z-index: 2; /* Ensure it is above the background */
   color: white; /* Text color */
   text-align: center; /* Center text */
+}
+
+.body {
+  color: RED;
 }
 
 .hero h1 {
@@ -831,54 +853,89 @@ header .container {
 
 /* Gallery Section Styles */
 .gallery {
-  padding: 4em 2em; /* Padding for the gallery section */
-  background-color: white; /* Light background color */
-  text-align: center; /* Center align text */
-}
-
-.gallery h2 {
-  font-size: 2.5em; /* Title font size */
-  margin-bottom: 1em; /* Space below the title */
-  color: #ff6f61; /* Title color */
+  background-color: white;
+  padding: 2em;
+  text-align: center;
 }
 
 .gallery-container {
-  display: flex; /* Use flexbox for layout */
-  flex-wrap: wrap; /* Allow items to wrap */
-  justify-content: space-between; /* Space between items */
-  gap: 20px; /* Space between items */
+  background-color: wheat;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.gallery-item {
-  flex: 1 1 calc(33.33% - 20px); /* 3 items per row with gap */
-  max-width: calc(33.33% - 20px); /* Max width for each item */
-  cursor: pointer; /* Pointer cursor for clickable items */
+.gallery h2 {
+  color: #ff6f61;
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  position: relative;
 }
 
-.gallery-item img {
-  width: 100%; /* Full width for images */
-  height: 100%; /* Maintain aspect ratio */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+/* Underline with glowing effect */
+.gallery h2::after {
+  content: "";
+  display: block;
+  width: 100%; /* Full width under the title */
+  height: 4px;
+  background-color: #ff6f61;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(51, 51, 51, 0.8), 0 0 20px rgba(51, 51, 51, 0.6); /* Glowing effect */
 }
 
-/* Media Query for Smaller Screens */
+/* Promo grid */
+.gallery-grid, .gallery-grid2 {
+  display: flex;
+  margin-top: 20px;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center;
+  gap: 2em;
+}
+
+/* Promo cards */
+.gallery-item, .gallery-item2 {
+  flex: 0 1 calc(25% - 2em); /* Allow 4 items per row with gap */
+  max-width: 300px; /* Optional: Max width for each promo item */
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  background-color: white;
+  border: 1px solid #ddd; /* Light border around each card */
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for each card */
+  transition: transform 0.3s ease;
+  cursor: pointer; /* Add cursor pointer for clickable cards */
+}
+
+.gallery-item img, .gallery-item2 img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Hover effect for clickable cards */
+.gallery-item:hover, .gallery-item2:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .gallery-item {
-      flex: 1 1 calc(50% - 20px); /* 2 items per row on small screens */
-      max-width: calc(50% - 20px); /* Max width for each item */
+  .gallery-item, .gallery-item2 {
+    flex: 0 1 100%; /* Full width on smaller screens */
+    max-width: none; /* Remove max-width */
   }
 }
-.gallery-item {
-  flex: 1 1 calc(33.33% - 20px); /* 3 items per row with gap */
-  max-width: calc(33.33% - 20px); /* Max width for each item */
-  cursor: pointer; /* Pointer cursor for clickable items */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
-}
 
-.gallery-item:hover {
-  transform: scale(1.05); /* Slightly enlarge the image on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+@media (max-width: 480px) {
+  .gallery h2 {
+    font-size: 2em; /* Smaller font size for smaller screens */
+  }
 }
 /* Lightbox Styles */
 #lightbox {
@@ -950,18 +1007,19 @@ header .container {
   object-fit: contain; /* Ensure the entire image is visible without cropping */
   border-radius: 8px; /* Optional: Add rounded corners */
 }
-/*Contact**/
+/* Contact Section */
 .contact-container {
   text-align: center;
   display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
   align-items: flex-start;
-  max-width: 1100px;
-  margin: 50px;
-  padding: 20px;
   background-color: wheat;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  margin-left: 75px;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  max-width: 90%;
+  margin: 0 auto;
+  margin-left: 70px;
 }
 
 /* Left Section: Contact Form */
@@ -972,7 +1030,7 @@ header .container {
   justify-content: center;
 }
 
-.contact-form h2{
+.contact-form h2 {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #ff6f61;
@@ -990,7 +1048,7 @@ header .container {
 
 .form-group label {
   display: block;
-  font-size: 1.0rem;
+  font-size: 1rem;
   color: black;
   margin-bottom: 5px;
 }
@@ -1011,7 +1069,7 @@ header .container {
 }
 
 .form-group button {
-  background-color: #FF5D00;
+  background-color: #ff5d00;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -1028,42 +1086,128 @@ header .container {
 /* Right Section: Google Map */
 .contact-map {
   flex: 1;
-  height: 500px;
+  height: 600px;
   border-radius: 5px;
   overflow: hidden;
 }
-.contact-map h2{
-font-size: 2rem;
-margin-bottom: 20px;
-color: #ff6f61;
+
+.contact-map h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff6f61;
 }
+
 .contact-map iframe {
   width: 100%;
   height: 100%;
   border: none;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Stack form and map vertically on smaller screens */
+    padding: 1em; /* Reduce padding for smaller screens */
+    flex: 0 1 100%; /* Full width on smaller screens */
+    max-width: none; /* Remove max-width */
+  }
+
+  .contact-form {
+    padding-right: 0; /* Remove right padding on smaller screens */
+    margin-bottom: 20px; /* Add space between form and map */
+  }
+
+  .contact-map {
+    height: 300px; /* Reduce map height for smaller screens */
+  }
+
+  .contact-form h2,
+  .contact-map h2 {
+    font-size: 1.5rem; /* Reduce heading size for smaller screens */
+  }
+
+  .contact-form p {
+    font-size: 1rem; /* Reduce paragraph font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 1em; /* Further reduce padding for very small screens */
+  }
+
+  .contact-form h2,
+  .contact-map h2 {
+    font-size: 1.25rem; /* Further reduce heading size for very small screens */
+  }
+
+  .contact-form p {
+    font-size: 0.9rem; /* Further reduce paragraph font size for very small screens */
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 8px; /* Reduce input padding for very small screens */
+  }
+
+  .form-group button {
+    padding: 8px 16px; /* Reduce button padding for very small screens */
+  }
+}
+
 /* Footer Container */
+
 .footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #000; /* Changed to black */
+  background-color: wheat; /* Changed to black */
   border-top: 1px solid #333; /* Optional: Darker border */
+  border-radius: 5px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1500px;
+  margin: 0 auto; /* Center the footer content */
 }
 
 .footer-left, .footer-center, .footer-right {
   flex: 1;
   text-align: center;
-  color: #fff; /* Changed text color to white */
+  flex-direction: column;
+  color: #ff6f61; /* Changed text color to white */
+}
+
+.footer-right {
+  width: 50px; /* Reduced width */
+  padding: 5px; /* Reduced padding */
+  border-radius: 8px; /* Rounded corners */
+  text-align: center; /* Center align text */
+  margin-top: 20px; /* Space above the box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth*/
+}
+
+.footer-right h4 {
+  margin-bottom: 10px; /* Space below the heading */
+  font-size: 1.2em; /* Larger font size for the heading */
+  font-weight: bold; /* Bold text */
+}
+
+.footer-right p {
+  margin: 5px 0; /* Space between paragraphs */
+  font-size: 1.0em; /* Font size for the hours */
 }
 
 .footer-bottom {
   text-align: center;
   padding: 10px;
-  background-color: #000; /* Changed to black */
+  background-color: wheat; /* Changed to black */
   border-top: 1px solid #333; /* Optional: Darker border */
-  color: #fff; /* Changed text color to white */
+  color: #ff6f61; /* Changed text color to white */
 }
 
 .footer-logo {
@@ -1072,9 +1216,31 @@ color: #ff6f61;
   margin-right: 10px;
 }
 
-.footer-center a, .footer-right p {
-  margin: 5px 0;
-  color: #fff; /* Changed text color to white */
+.footer-info {
+  display: flex;
+  flex-direction: column; /* Stack contact and social sections */
+  gap: 20px; /* Space between sections */
+  color: #ff6f61;
+  margin-left: 60px;
+}
+
+.footer-contact, .footer-social {
+  flex: 1; /* Allow sections to grow */
+}
+
+.footer-contact h4, .footer-follow h4 {
+  color: #ff6f61;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.footer-contact p {
+  font-size: 1.0em;
+  margin-bottom: 5px;
+}
+
+.footer-contact a {
+
   text-decoration: none;
 }
 
@@ -1085,24 +1251,6 @@ color: #ff6f61;
 
 /* For smaller screens (max-width: 768px) */
 @media (max-width: 768px) {
-  .contact-container {
-      flex-direction: column;
-      padding: 20px;
-      text-align: center;
-      justify-content: center;
-  }
-
-  .contact-form {
-      padding-right: 0;
-      margin-bottom: 30px;
-      text-align: center;
-      justify-content: center;
-  }
-
-  .contact-map {
-      height: 300px;
-  }
-
   .footer-container {
       flex-direction: column;
       padding: 10px;
@@ -1121,14 +1269,6 @@ color: #ff6f61;
 
 /* For even smaller screens (max-width: 480px) */
 @media (max-width: 480px) {
-  .contact-form h2 {
-      font-size: 1.5rem;
-  }
-
-  .contact-map iframe {
-      height: 200px;
-  }
-
   .footer-left, .footer-center, .footer-right {
       font-size: 0.8rem;
   }
