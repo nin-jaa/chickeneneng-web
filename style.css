@@ -354,14 +354,15 @@ header .container {
   position: absolute;
   top: 0;
   left: 0;
-  width: auto;
+  text-align: center;
+  width: 1200px;
   height: 100%;
   z-index: 1; /* Ensure it is behind the content */
 }
 
 .slide {
   position: absolute;
-  width: auto;
+  width: 1300px;
   height: 100%;
   background-size: cover; /* Cover the entire section */
   background-position: center; /* Center the image */
