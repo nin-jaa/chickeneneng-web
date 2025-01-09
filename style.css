@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 /* Header Styles */
-/* Make the header sticky */
 header {
   position: sticky; /* Make the header sticky */
   top: 0; /* Stick to the top of the viewport */
@@ -16,6 +15,7 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
   width: 100%;
 }
+
 .logo-text h1, p{
     font-size: 1.5em; /* Adjust the size as needed */
     color: white; /* Ensure the text color is appropriate */
@@ -103,7 +103,7 @@ header .container {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .menu-icon {
       display: block; /* Show the hamburger icon on small screens */
   }
@@ -131,6 +131,7 @@ header .container {
       display: flex; /* Show the navigation links in a row on larger screens */
   }
 }
+
 /* Sidebar Styles */
 .sidebar {
   position: fixed; /* Fixed position to stay in view */
@@ -190,10 +191,6 @@ header .container {
   }
   .nav-linked a {
     font-size: 1.2rem; /* Smaller font size for even smaller screens */
-  }
-
-  .hero h1 {
-    font-size: 0.2em;
   }
 }
 
@@ -669,8 +666,12 @@ header .container {
   }
 }
 
+.lightbox-content {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center align children */
+}
 
-/* Lightbox Styles */
 #lightbox {
   display: none; /* Hidden by default */
   position: fixed;
@@ -682,28 +683,35 @@ header .container {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-}
-
-#lightbox img {
-  max-width: 80%;
-  max-height: 80%;
-  border: 5px solid #fff;
-  border-radius: 8px;
-}
-
-/* Close button styling */
-#close-lightbox {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 30px;
-  color: white;
   cursor: pointer;
-  z-index: 1001;
 }
 
-#close-lightbox:hover {
-  color: #ccc;
+/* Lightbox image styling */
+#lightbox img {
+  max-width: 100%; /* Set a maximum width for the image */
+  max-height:100%; /* Set a maximum height for the image */
+  width: 50%; /* Allow width to adjust automatically */
+  height: 50%; /* Allow height to adjust automatically */
+  object-fit: contain; /* Maintain the aspect ratio without cropping */
+  border: 5px solid black; /* Optional border */
+  border-radius: 8px; /* Optional rounded corners */
+  margin-right: 300px;
+}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #lightbox img {
+    width: 60%; /* Increase width for smaller screens */
+    height: 60%; /* Increase height for smaller screens */
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  #lightbox img {
+    width: 80%; /* Further increase width for very small screens */
+    height: 80%; /* Further increase height for very small screens */
+    text-align: center;
+  }
 }
 
 /* Promo Section Styles */

@@ -38,7 +38,7 @@
     <div id="sidebar" class="sidebar">
         <button class="close-btn" onclick="closeSidebar()">×</button>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#hero">Home</a></li>
             <li><a href="index.html#promos">Promos</a></li>
             <li><a href="index-menu.html">Menu</a></li>
             <li><a href="index.html#about">About</a></li>
@@ -50,7 +50,7 @@
 <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">
     ↑
 </button>
-<br><br>
+<br>
 <section id="top-picks">
     <div class="top-pics-containers">
     <h2>Top Picks</h2>
@@ -75,6 +75,12 @@
                 </div>
             </div>
 </section>
+<div id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-content">
+      <img id="lightbox-image" src="" alt="Fullscreen Image">
+      <span id="lightbox-close" onclick="closeLightbox()">×</span>
+    </div>
+  </div>
 <!-- Foods Category -->
 <section class="menu">
     <div class="menu-container">

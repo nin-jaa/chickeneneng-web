@@ -18,10 +18,7 @@
                 </a>
             </div>
 
-            <nav>
-                <label for="menu-toggle" class="menu-icon" onclick="openSidebar()">
-                    &#9776; <!-- Hamburger icon -->
-                </label>
+            <nav> 
                 <ul class="nav-linked">
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#promos">Promos</a></li>
@@ -33,7 +30,6 @@
             </nav>
         </div>
     </header>
-    
     <!-- Sidebar Menu -->
     <div id="sidebar" class="sidebar">
         <button class="close-btn" onclick="closeSidebar()">×</button>
@@ -65,6 +61,13 @@
 </section>
 
 
+
+<div id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-content">
+      <img id="lightbox-image" src="" alt="Fullscreen Image">
+      <span id="lightbox-close" onclick="closeLightbox()">×</span>
+    </div>
+  </div>
 
 <!-- Promo Section -->
 <section class="promos" id="promos">
