@@ -531,6 +531,10 @@ header .container {
   text-align: center;
   color: #333; /* Dark text color */
 }
+.menu-price {
+  text-align: center;
+  font-weight: bold;
+}
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
