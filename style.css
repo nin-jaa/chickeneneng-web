@@ -1278,7 +1278,7 @@ header .container {
   max-width: 70px; /* Set a smaller width for the image */
   height: 60px; /* Set a fixed height to make it round */
   object-fit: cover; /* Ensure the image covers the area without distortion */
-  border-radius: 40px;
+  border-radius: 35px;
   margin-bottom: 1em; /* Space below the image */
   border-color: #27242e;
   border: 1px solid #27242e;
