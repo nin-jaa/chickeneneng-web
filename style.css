@@ -358,6 +358,7 @@ header .container {
   height: 100%;
   z-index: 1; /* Ensure it is behind the content */
   background-size: cover; /* Cover the entire section */
+  background-repeat: no-repeat;
   background-position: center; /* Center the image */
   background-image: url('images/panghomepage.png'); /* Set the background image */
 }
