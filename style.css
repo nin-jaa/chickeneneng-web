@@ -350,19 +350,21 @@ header .container {
 }
 
 /* Background Slideshow */
-.background-slideshow {
+.background {
   position: absolute;
   top: 0;
   left: 0;
-  text-align: center;
-  width: 1200px;
+  width: 100%;
   height: 100%;
   z-index: 1; /* Ensure it is behind the content */
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
+  background-image: url('images/panghomepage.png'); /* Set the background image */
 }
 
 .slide {
   position: absolute;
-  width: 1300px;
+  width: 100%;
   height: 100%;
   background-size: cover; /* Cover the entire section */
   background-position: center; /* Center the image */
