@@ -42,12 +42,14 @@ header .container {
   display: flex; /* Flexbox for layout */
   justify-content: space-between; /* Space between logo and nav */
   align-items: center; /* Center items vertically */
-  max-width: 1200px; /* Max width for the container */
+  max-width: auto; /* Max width for the container */
   margin: 0 auto; /* Center the container */
   padding: 0 20px; /* Padding for left and right */
 }
 .container h1 {
   color: #fc4f3f;
+  font-size: 1.5em;
+  width: 50%;
 }
 .nav-linked {
   list-style: none; /* Remove bullet points */
@@ -387,77 +389,65 @@ header .container {
   z-index: 2; /* Ensure it is above the background */
   color: white; /* Text color */
   text-align: center; /* Center text */
-}
-
-.body {
-  color: RED;
+  padding: 20px; /* Add padding for better spacing */
 }
 
 .hero h1 {
-  font-size: 3.4em; /* Large font size for the title */
+  font-size: 4.7em; /* Large font size for the title */
   margin-bottom: 10px; /* Space below the title */
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 10); /* Horizontal offset, vertical offset, blur radius, color */
 }
 
 .hero p {
-  font-size: 1.7em; /* Medium font size for the description */
+  font-size: 2.3em; /* Medium font size for the description */
   margin-bottom: 20px; /* Space below the description */
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 10); /* Horizontal offset, vertical offset, blur radius, color */
 }
 
-/* Top Picks Section Styles */
-#top-picks {
-  padding: 20px;
-  background-color: white; /* Light background for the section */
-  margin-bottom: 20px; /* Space below the section */
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 3.5em; /* Slightly smaller font size for tablets */
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 1.8em; /* Slightly smaller font size for tablets */
+    text-align: center;
+  }
 }
 
-#top-picks h2 {
-  text-align: center; /* Center the heading */
-  margin-bottom: 20px; /* Space below the heading */
-  color: #ff6f61; /* Green color for the heading */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5em; /* Smaller font size for smaller tablets */
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 1.5em; /* Smaller font size for smaller tablets */
+    text-align: center;
+  }
 }
 
-.top-picks-box {
-  border: 1px solid #ccc; /* Border for the box */
-  border-radius: 8px; /* Rounded corners for the box */
-  padding: 20px; /* Padding inside the box */
-  background-color: wheat; /* White background for the box */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2em; /* Even smaller font size for mobile */
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 1.2em; /* Even smaller font size for mobile */
+    text-align: center;
+  }
+
+  .hero-content {
+    padding: 10px; /* Reduce padding for very small screens */
+  }
 }
 
-.top-picks-container {
-  display: flex; /* Use flexbox for layout */
-  justify-content: space-around; /* Space items evenly */
-  align-items: stretch; /* Ensure all items stretch to the same height */
-}
-
-.top-pick {
-  text-align: center; /* Center align text */
-  margin: 10px; /* Space between items */
-  flex: 1 1 30%; /* Allow items to grow and shrink, with a base width of 30% */
-  max-width: 250px; /* Set a maximum width for each item */
-  display: flex; /* Use flexbox for alignment */
-  flex-direction: column; /* Stack content vertically */
-}
-
-.top-pick-box {
-  border: 1px solid #ddd; /* Light border around each box */
-  border-radius: 8px; /* Rounded corners for the box */
-  padding: 10px; /* Padding inside the box */
-  background-color: #fff; /* White background for each box */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
-  flex: 1; /* Ensure the box stretches to fill the container */
-  display: flex; /* Use flexbox for alignment */
-  flex-direction: column; /* Stack content vertically */
-}
-
-.top-pick-box:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-}
-
+/* Top Pics Container */
 .top-pics-containers {
   background-color: wheat;
   padding: 2em;
@@ -467,50 +457,16 @@ header .container {
   margin: 0 auto;
 }
 
-.top-pick-image {
-  width: 100%; /* Full width for images */
-  height: 100%; /* Maintain aspect ratio */
-  border-radius: 8px; /* Rounded corners for images */
-  object-fit: cover; /* Ensure images fill the container */
+/* Heading Styling */
+.top-pics-containers h2 {
+  color: #ff6347; /* Tomato color for the h2 */
+  font-size: 2rem; /* Adjust font size */
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px; /* Add some space below the heading */
 }
 
-.top-pick-text {
-  margin-top: 10px; /* Space above the text */
-  font-size: 16px; /* Font size for item names */
-  color: #333; /* Dark color for text */
-  flex: 1; /* Ensure text takes up remaining space */
-}
-
-.top-pick-price {
-  margin-top: 5px; /* Space above the price */
-  font-size: 15px; /* Font size for price */
-  color: #666; /* Gray color for price */
-}
-
-.menu {
-  background-color: white;
-  padding: 2em;
-  text-align: center;
-  }
-  
-  .menu-container {
-  background-color: wheat;
-  padding: 2em;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
-  max-width: 1200px;
-  margin: 0 auto;
-  }
-  
-  .menu h2 {
-  color: #ff6f61;
-  font-size: 2.5em;
-  margin-bottom: 1.5em;
-  position: relative;
-  }
-  
-  /* Underline with glowing effect */
-  .menu h2::after {
+/* Underline with glowing effect */
+.top-pics-containers h2::after {
   content: "";
   display: block;
   width: 100%; /* Full width under the title */
@@ -518,65 +474,237 @@ header .container {
   background-color: #ff6f61;
   margin-top: 10px;
   box-shadow: 0 0 10px rgba(51, 51, 51, 0.8), 0 0 20px rgba(51, 51, 51, 0.6); /* Glowing effect */
-  }
+}
+
+/* Top Picks Box */
+.top-picks-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   
-  /* Promo grid */
-  .menu-grid{
+}
+
+#top-picks {
+  margin-right: 20px;
+  margin-left: 20px
+}
+
+/* Top Picks Container */
+.top-picks-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+/* Individual Top Pick */
+.top-pick {
+  margin: 20px;
+  width: calc(33.33% - 40px); /* Adjust width for 3 items per row */
+}
+
+/* Top Pick Box */
+.top-pick-box {
+  background-color: #fff;
+  width: 100%; /* Full width for better responsiveness */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.top-pick-box:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Top Pick Image */
+.top-pick-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Top Pick Text */
+.top-pick-text {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #333; /* Dark text color */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .top-pick {
+    width: calc(50% - 40px); /* 2 items per row on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .top-pick {
+    width: calc(100% - 40px); /* 1 item per row on mobile */
+  }
+
+  .top-pics-containers h2 {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+  }
+
+  .top-pick-box {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .top-pick-text {
+    font-size: 16px; /* Smaller font size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .top-pics-containers {
+    padding: 1em; /* Reduce padding for very small screens */
+  }
+
+  .top-pick {
+    margin: 10px; /* Reduce margin for very small screens */
+  }
+
+  .top-pick-box {
+    padding: 10px; /* Further reduce padding for very small screens */
+  }
+
+  .top-pick-text {
+    padding: 10px; /* Reduce padding for very small screens */
+  }
+}
+
+.menu {
+  background-color: white;
+  padding: 2em;
+  text-align: center;
+}
+
+.menu-container {
+  background-color: wheat;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu h2 {
+  color: #ff6f61;
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  position: relative;
+}
+
+/* Underline with glowing effect */
+.menu h2::after {
+  content: "";
+  display: block;
+  width: 100%; /* Full width under the title */
+  height: 4px;
+  background-color: #ff6f61;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(51, 51, 51, 0.8), 0 0 20px rgba(51, 51, 51, 0.6); /* Glowing effect */
+}
+
+/* Promo grid */
+.menu-grid {
   display: flex;
   margin-top: 20px;
   grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
   flex-wrap: wrap; /* Allow items to wrap to the next line */
   justify-content: center;
   gap: 2em;
-  }
-  
-  /* Promo cards */
-  .menu-item{
+}
+
+/* Promo cards */
+.menu-item {
   flex: 0 1 calc(25% - 2em); /* Allow 4 items per row with gap */
   max-width: 300px; /* Optional: Max width for each promo item */
   text-align: center;
   text-decoration: none;
   color: inherit;
   background-color: white;
-  border: 1px solid #ddd;  /* Light border around each card */
+  border: 1px solid #ddd; /* Light border around each card */
   border-radius: 8px;
   padding: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Box shadow for each card */
-  transition: transform 0.3s ease;
-  }
-  
-  .menu-item img{
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for each card */
+  transition: transform 0 .3s ease;
+}
+
+.menu-item img {
   width: 100%;
   height: 250px;
   object-fit: cover;
   border-radius: 8px;
-  }
-  
-  .menu-item p{
+}
+
+.menu-item p {
   margin-top: 10px;
   font-size: 1.2em;
   font-weight: bold;
-  }
-  
-  /* Hover effect for clickable cards */
-  .menu-item:hover{
+}
+
+/* Hover effect for clickable cards */
+.menu-item:hover {
   transform: scale(1.05); /* Slightly enlarge the card on hover */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);  /* Stronger shadow on hover */
-  }
-  
-  /* Media Queries for Responsiveness */
-  @media (max-width: 768px) {
-  .menu-item{
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .menu-item {
     flex: 0 1 100%; /* Full width on smaller screens */
     max-width: none; /* Remove max-width */
   }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
   .menu h2 {
     font-size: 2em; /* Smaller font size for smaller screens */
   }
-  }
+}
+
+
+/* Lightbox Styles */
+#lightbox {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border: 5px solid #fff;
+  border-radius: 8px;
+}
+
+/* Close button styling */
+#close-lightbox {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+#close-lightbox:hover {
+  color: #ccc;
+}
 
 /* Promo Section Styles */
 .promos {
@@ -979,26 +1107,27 @@ header .container {
   border-radius: 8px; /* Optional: Add rounded corners */
 }
 
-/* Base Styles for Contact Container */
+/* Contact Container */
 .contact-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1200px;
+  max-width: auto;
   margin: 0 auto;
   padding: 20px;
-  gap: 20px; /* Adds space between the form and map */
 }
 
-/* Contact Form Styles */
+/* Contact Form */
 .contact-form {
   flex: 1;
-  max-width: 600px;
+  max-width: 1200px;
+  margin-left: 15px;
   padding: 20px;
   background-color: wheat;
   color: #ff6f61;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 20px; /* Space between form and map */
 }
 
 .contact-form h2 {
@@ -1049,10 +1178,11 @@ header .container {
   background-color: #555;
 }
 
-/* Contact Map Styles */
+/* Contact Map */
 .contact-map {
   flex: 1;
-  max-width: 600px;
+  max-width: 1200px;
+  margin-left: 30px;
   padding: 20px;
   background-color: wheat;
   color: #ff6f61;
@@ -1072,15 +1202,20 @@ header .container {
   border-radius: 8px;
 }
 
-/* Responsive Styles */
+/* Responsive Design */
 @media (max-width: 768px) {
   .contact-container {
-      flex-direction: column; /* Stacks form and map vertically on smaller screens */
-      align-items: center; /* Centers items */
+    flex-direction: column; /* Stacks form and map vertically on smaller screens */
+    align-items: center; /* Centers items */
+  }
+
+  .contact-form {
+    margin-right: 0; /* Remove margin on mobile */
+    margin-bottom: 20px; /* Adds space between form and map on mobile */
   }
 
   .contact-map {
-      margin-top: 20px; /* Adds space between form and map on mobile */
+    margin-top: 20px; /* Adds space between form and map on mobile */
   }
 }
 

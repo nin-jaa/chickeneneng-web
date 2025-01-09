@@ -27,6 +27,33 @@ function openLightbox(imageSrc) {
       toggleBackToTopBtn();
   };
   
+// menu
+// Get the lightbox container and content elements
+const lightbox = document.getElementById('lightbox');
+const lightboxContent = document.getElementById('lightbox-content');
+const closeBtn = document.getElementById('close-lightbox');
+
+// Function to open the lightbox
+function openLightbox(src) {
+    lightbox.style.display = 'flex'; // Show the lightbox
+    lightboxContent.src = src; // Set the image source
+}
+
+// Function to close the lightbox
+function closeLightbox() {
+    lightbox.style.display = 'none'; // Hide the lightbox
+}
+
+// Add event listener to the close button
+closeBtn.addEventListener('click', closeLightbox);
+
+// Add event listener to the lightbox container to close when clicked outside the content
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
   function toggleBackToTopBtn() {
       const backToTopBtn = document.getElementById("backToTopBtn");
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
